@@ -25,13 +25,11 @@ class Scraper
 
         preg_match_all($pattern, $htmlSection, $matches);
 
-        dd($matches);
-
-        dd($htmlSection);
 
 
 
-    return ($html);
+
+        return ($matches);
 
 }
 
