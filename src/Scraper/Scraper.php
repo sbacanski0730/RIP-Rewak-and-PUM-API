@@ -7,7 +7,7 @@ use Goutte\Client;
 
 class Scraper
 {
-    public function scrap($source)
+    public function scrap($source, $pattern)
     {
         $client = new Client();
         $crawler = $client->request('GET', $source);
@@ -23,7 +23,7 @@ class Scraper
 
         $htmlSection = substr($html, $start, $length);
 
-        preg_match_all('/<td class="nazwaDnia" colspan="4" style="font-size:13px">(?<dzien>.*?)<\/td>|<td class="godzina">(?<hours>.*?)<\/td><td class="test">(?<przedmiot>.*?)<br><\/td><td class="test">(?<wykladowca>.*?)<br><\/td><td class="test2">(?<sala>.*?)<br><\/td>/m', $htmlSection, $matches);
+        preg_match_all($pattern, $htmlSection, $matches);
 
         dd($matches);
 
