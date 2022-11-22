@@ -11,14 +11,16 @@ class Scraper
     {
         $client = new Client();
         $crawler = $client->request('GET', $source);
-        $links = $crawler->filterXPath('//tbody/tr/td[2][not(contains(@class,'.'nazwaSpecjalnosci'.'))]');
-        var_dump($links);
-        $links = $crawler->filterXPath('//tbody/tr/td[2][not(contains(@class,'.'nazwaSpecjalnosci'.'))]');
-        dd($links);
+        $selector='body';
+        $output = $crawler->filter($selector);
+        $html = $output->outerHtml();
+        var_dump($html);
+
+        dd($html);
 
 
 
-    return ($subjects);
+    return ($html);
 
 }
 
