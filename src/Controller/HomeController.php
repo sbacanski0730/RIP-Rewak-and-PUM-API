@@ -19,13 +19,18 @@ class HomeController extends AbstractController
 
     public function fetch(): Response
     {
-        $array = $this->scraper->scrap('http://www.plan.pwsz.legnica.edu.pl/checkSpecjalnosc.php?specjalnosc=s4PAM', '/<td class="nazwaDnia" colspan="4" style="font-size:13px">(?<dzien>.*?)<\/td>|<td class="godzina">(?<hours>.*?)<\/td><td class="test">(?<przedmiot>.*?)<br><\/td><td class="test">(?<wykladowca>.*?)<br><\/td><td class="test2">(?<sala>.*?)<br><\/td>/m');
+        $weeks = $this->scraper->scrap('http://www.plan.pwsz.legnica.edu.pl/checkSpecjalnosc.php?specjalnosc=s4PAM', '/<option value="(?<value>.*?)".*? .*? .*? .(?<tydzien>.*?).?+</m');
+        $newweeks['value'] = $weeks['value'];
+        $newweeks['tydzien'] = $weeks['tydzien'];
+        $array = $this->scraper->scrap('http://www.plan.pwsz.legnica.edu.pl/checkSpecjalnosc.php?specjalnosc=s4PAM', '/<td class="nazwaDnia" colspan="4" style="font-size:13px">(?<dzien>.*?)<\/td>|<td class="godzina">(?<hours>.*?)<\/td><td class="test">(?<przedmiot>.*?)<br><\/td><td class="test">(?<wykladowca>.*?)<br><\/td><td class="test2">(?<sala>.*?)<br><\/td>/m', $newweeks);
+        $newarray['dzien'] = $array['dzien'];
+        $newarray['hours'] = $array['hours'];
+        $newarray['przedmiot'] = $array['przedmiot'];
+        $newarray['wykladowca'] = $array['wykladowca'];
+        $newarray['sala'] = $array['sala'];
 
-        for ($i = 0; $i <1; $i++) {
-        $removed = array_shift($array);
-        }
 
-        file_put_contents('test.json', json_encode($array));
+        file_put_contents('test.json', json_encode($newarray));
 
 
         return new Response('Json file generated sucesfully');
