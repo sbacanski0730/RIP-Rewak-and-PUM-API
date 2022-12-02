@@ -7,7 +7,7 @@ use Goutte\Client;
 
 class Scraper
 {
-    public function initscrap($source, $pattern)
+    public function initscrap($source, $pattern, $pattern2)
     {
         $client = new Client();
         $crawler = $client->request('GET', $source);
@@ -24,11 +24,14 @@ class Scraper
         $htmlSection = substr($html, $start, $length);
 
         preg_match_all($pattern, $htmlSection, $matches);
+        $results['value']=$matches['value'];
+        preg_match_all($pattern2, $htmlSection, $matches);
+        $results['tydzien']=$matches['tydzien'];
 
 
 
 
-        return ($matches);
+        return ($results);
 
     }
     public function scrap($source, $pattern, $weeks)

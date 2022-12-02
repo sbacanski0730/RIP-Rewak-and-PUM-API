@@ -19,11 +19,13 @@ class HomeController extends AbstractController
 
     public function fetch(): Response
     {
-        $weeks = $this->scraper->initscrap('http://www.plan.pwsz.legnica.edu.pl/checkSpecjalnosc.php?specjalnosc=s4PAM', '/<option value="(?<value>.*?)"|\((?<tydzien>.\d.*?)\)|selected">(?<select>.*?) -/m');
-        $newweeks['value'] = $weeks['value'];
-        $newweeks['tydzien'] = $weeks['tydzien'];
-        dd($newweeks);
-        $array = $this->scraper->scrap('http://www.plan.pwsz.legnica.edu.pl/checkSpecjalnosc.php?specjalnosc=s4PAM', '/<td class="nazwaDnia" colspan="4" style="font-size:13px">(?<dzien>.*?)<\/td>|<td class="godzina">(?<hours>.*?)<\/td><td class="test">(?<przedmiot>.*?)<br><\/td><td class="test">(?<wykladowca>.*?)<br><\/td><td class="test2">(?<sala>.*?)<br><\/td>/m', $newweeks);
+        $http = 'http://www.plan.pwsz.legnica.edu.pl/checkSpecjalnosc.php?specjalnosc=s4PAM';
+        $pattern = '/<option value="(?<value>.*?)"/m';
+        $pattern2 = '/\((?<tydzien>.\d.*?)\)/m';
+        $weeks = $this->scraper->initscrap($http, $pattern, $pattern2);
+        $pattern = '/<td class="nazwaDnia" colspan="4" style="font-size:13px">(?<dzien>.*?)<\/td>|<td class="godzina">(?<hours>.*?)<\/td><td class="test">(?<przedmiot>.*?)<br><\/td><td class="test">(?<wykladowca>.*?)<br><\/td><td class="test2">(?<sala>.*?)<br><\/td>/m';
+        dd($weeks);
+        $array = $this->scraper->scrap($http, $pattern, $newweeks);
         $newarray['dzien'] = $array['dzien'];
         $newarray['hours'] = $array['hours'];
         $newarray['przedmiot'] = $array['przedmiot'];
