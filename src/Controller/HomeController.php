@@ -28,7 +28,7 @@ class HomeController extends AbstractController
         $array = $this->scraper->scrap($http, $pattern, $weeks);
 
 
-        file_put_contents('test.json', json_encode($array));
+        file_put_contents('json_preview.json', json_encode($array));
 
 
         return new Response('Json file generated sucesfully for speciality '.$specjalnosc);

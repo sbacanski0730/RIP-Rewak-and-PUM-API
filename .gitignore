@@ -9,3 +9,4 @@
 /vendor/
 ###< symfony/framework-bundle ###
 public/test.json
+public/json_preview.json
