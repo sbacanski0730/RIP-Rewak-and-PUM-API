@@ -26,14 +26,9 @@ class HomeController extends AbstractController
         $weeks = $this->scraper->initscrap($http, $pattern, $pattern2);
         $pattern = '/<td class="nazwaDnia" colspan="4" style="font-size:13px">(?<dzien>.*?)<\/td>|<td class="godzina">(?<hours>.*?)<\/td><td class="test">(?<przedmiot>.*?)<br><\/td><td class="test">(?<wykladowca>.*?)<br><\/td><td class="test2">(?<sala>.*?)<br><\/td>/m';
         $array = $this->scraper->scrap($http, $pattern, $weeks);
-        $newarray['dzien'] = $array['dzien'];
-        $newarray['hours'] = $array['hours'];
-        $newarray['przedmiot'] = $array['przedmiot'];
-        $newarray['wykladowca'] = $array['wykladowca'];
-        $newarray['sala'] = $array['sala'];
 
 
-        file_put_contents('test.json', json_encode($newarray));
+        file_put_contents('test.json', json_encode($array));
 
 
         return new Response('Json file generated sucesfully for speciality '.$specjalnosc);
