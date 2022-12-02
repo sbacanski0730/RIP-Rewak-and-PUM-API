@@ -36,7 +36,7 @@ class HomeController extends AbstractController
         file_put_contents('test.json', json_encode($newarray));
 
 
-        return new Response('Json file generated sucesfully');
+        return new Response('Json file generated sucesfully for speciality '.$specjalnosc);
 
 
     }
