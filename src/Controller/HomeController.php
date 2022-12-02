@@ -24,8 +24,7 @@ class HomeController extends AbstractController
         $pattern2 = '/\((?<tydzien>.\d.*?)\)/m';
         $weeks = $this->scraper->initscrap($http, $pattern, $pattern2);
         $pattern = '/<td class="nazwaDnia" colspan="4" style="font-size:13px">(?<dzien>.*?)<\/td>|<td class="godzina">(?<hours>.*?)<\/td><td class="test">(?<przedmiot>.*?)<br><\/td><td class="test">(?<wykladowca>.*?)<br><\/td><td class="test2">(?<sala>.*?)<br><\/td>/m';
-        dd($weeks);
-        $array = $this->scraper->scrap($http, $pattern, $newweeks);
+        $array = $this->scraper->scrap($http, $pattern, $weeks);
         $newarray['dzien'] = $array['dzien'];
         $newarray['hours'] = $array['hours'];
         $newarray['przedmiot'] = $array['przedmiot'];
