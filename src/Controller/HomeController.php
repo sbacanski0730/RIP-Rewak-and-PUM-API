@@ -15,11 +15,12 @@ class HomeController extends AbstractController
         $this->scraper = $scraper;
     }
 
-    #[Route('/scrap', name: 'scrap')]
+    #[Route('/scrap/{specjalnosc}', name: 'scrap')]
 
-    public function fetch(): Response
+    public function fetch($specjalnosc): Response
     {
-        $http = 'http://www.plan.pwsz.legnica.edu.pl/checkSpecjalnosc.php?specjalnosc=s4PAM';
+
+        $http = 'http://www.plan.pwsz.legnica.edu.pl/checkSpecjalnosc.php?specjalnosc='.$specjalnosc;
         $pattern = '/<option value="(?<value>.*?)"/m';
         $pattern2 = '/\((?<tydzien>.\d.*?)\)/m';
         $weeks = $this->scraper->initscrap($http, $pattern, $pattern2);

@@ -68,7 +68,7 @@ class Scraper
         $rok['sala'] = array_merge($rok['sala'], $matches['sala']);
         }
 
-        
+
         return ($rok);
 
 }
