@@ -5,6 +5,16 @@ namespace App\Scraper;
 use Goutte\Client;
 use Symfony\Component\HttpClient\HttpClient;
 
+class Pracownik {
+    public $name;
+    public $numer;
+    public $wydzial;
+}
+class Wydzial {
+    public $name;
+    public $number;
+}
+
 class Scraper
 {
     private $client;
@@ -16,10 +26,47 @@ class Scraper
 
     }
 
-    public function pracscrap($source, $pattern)
+    public function wydzialscrap($source, $pattern)
     {
 
         $this->crawler = $this->client->request('GET', $source);
+        $output = $this->crawler->filter('body');
+        $html = $output->outerHtml();
+
+        $start = stripos($html, '<body>');
+        $end = stripos($html, '</body>', $offset = $start);
+        $length = $end - $start;
+        $htmlSection = substr($html, $start, $length);
+
+
+        preg_match_all($pattern, $htmlSection, $matches);
+        $results['nazwa'] = $matches['nazwa_wydzialu'];
+        $results['numer'] = $matches['numer_wydzialu'];
+
+
+        $objects = [];
+
+
+        $length = count($results['nazwa']);
+
+
+        for ($i = 0; $i < $length; $i++) {
+            $object = new Wydzial();
+
+
+            $object->name = $results['nazwa'][$i];
+            $object->number = $results['numer'][$i];
+
+            $objects[] = $object;
+        }
+
+        return $objects;
+    }
+
+    public function pracscrap($pattern)
+    {
+
+
         $output = $this->crawler->filter('body');
         $html = $output->outerHtml();
 
@@ -35,7 +82,26 @@ class Scraper
         $results['wydzial_pracownik'] = $matches['wydzial'];
 
 
-        return $results;
+        $objects = [];
+
+
+        $length = count($results['name']);
+
+
+        for ($i = 0; $i < $length; $i++) {
+            $object = new Pracownik();
+
+
+            $object->name = $results['name'][$i];
+            $object->numer = $results['numer_pracownik'][$i];
+            $object->wydzial = $results['wydzial_pracownik'][$i];
+
+            $objects[] = $object;
+        }
+
+
+
+        return $objects;
     }
 
 
