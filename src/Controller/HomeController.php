@@ -1,6 +1,8 @@
 <?php
 namespace App\Controller;
 
+
+
 use App\Scraper\Scraper;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
@@ -19,7 +21,7 @@ class HomeController extends AbstractController
 
     public function fetch($specjalnosc): Response
     {
-        ini_set('default_charset', 'iso-8859-2');
+
 
 
         $http = 'http://www.plan.pwsz.legnica.edu.pl/schedule_view.php?site=show_nauczyciel.php';
