@@ -19,7 +19,7 @@ class Scraper
     public function pracscrap($source, $pattern)
     {
 
-        dd($this->crawler = $this->client->request('GET', $source));
+        $this->crawler = $this->client->request('GET', $source);
         $output = $this->crawler->filter('body');
         $html = $output->outerHtml();
 

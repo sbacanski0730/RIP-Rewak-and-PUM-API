@@ -19,7 +19,7 @@ class HomeController extends AbstractController
 
     public function fetch($specjalnosc): Response
     {
-        ini_set('default_charset', 'UTF-8');
+        ini_set('default_charset', 'iso-8859-2');
 
 
         $http = 'http://www.plan.pwsz.legnica.edu.pl/schedule_view.php?site=show_nauczyciel.php';
@@ -31,7 +31,7 @@ class HomeController extends AbstractController
         $weeks = $this->scraper->initscrap($http, $pattern, $pattern2);
         $pattern = '/<td class="nazwaDnia" colspan="4" style="font-size:13px">(?<dzien>.*?)<\/td>|<td class="godzina">(?<hours>.*?)<\/td><td class="test">(?<przedmiot>.*?)<br><\/td><td class="test">(?<wykladowca>.*?)<br><\/td><td class="test2">(?<sala>.*?)<br><\/td>/m';
         $array = $this->scraper->scrap($pattern, $weeks);
-        file_put_contents('json_preview_name.json', json_encode($name['name']));
+        file_put_contents('json_preview_name.json', json_encode($name));
         file_put_contents('json_preview.json', json_encode($array));
 
 
