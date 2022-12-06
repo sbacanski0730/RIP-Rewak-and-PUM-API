@@ -10,3 +10,4 @@
 ###< symfony/framework-bundle ###
 public/test.json
 public/json_preview.json
+public/json_preview_name.json

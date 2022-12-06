@@ -3,73 +3,99 @@
 namespace App\Scraper;
 
 use Goutte\Client;
-
+use Symfony\Component\HttpClient\HttpClient;
 
 class Scraper
 {
-    public function initscrap($source, $pattern, $pattern2)
+    private $client;
+    private $crawler;
+
+    public function __construct()
     {
-        $client = new Client();
-        $crawler = $client->request('GET', $source);
-        $selector='body';
-        $output = $crawler->filter($selector);
-        $html = $output->outerHtml();
-
-        $start = stripos($html, '<body>');
-
-        $end = stripos($html, '</body>', $offset = $start);
-
-        $length = $end - $start;
-
-        $htmlSection = substr($html, $start, $length);
-
-        preg_match_all($pattern, $htmlSection, $matches);
-        $results['value']=$matches['value'];
-        preg_match_all($pattern2, $htmlSection, $matches);
-        $results['tydzien']=$matches['tydzien'];
-
-
-
-
-        return ($results);
+        $this->client = new Client();
 
     }
-    public function scrap($source, $pattern, $weeks)
-    {
-        $client = new Client();
-        $crawler = $client->request('GET', $source);
-        $selector='body';
-        $form = $crawler->filter('form')->form();
-        $rok['dzien'] = array();
-        $rok['hours'] = array();
-        $rok['przedmiot'] = array();
-        $rok['wykladowca'] = array();
-        $rok['sala'] = array();
-        foreach($weeks['value'] as $week){
 
-        $crawler = $client->submit($form, array('dzien' => $week));
-        $output = $crawler->filter($selector);
+    public function pracscrap($source, $pattern)
+    {
+
+        dd($this->crawler = $this->client->request('GET', $source));
+        $output = $this->crawler->filter('body');
         $html = $output->outerHtml();
 
         $start = stripos($html, '<body>');
-
         $end = stripos($html, '</body>', $offset = $start);
-
         $length = $end - $start;
+        $htmlSection = substr($html, $start, $length);
 
+
+        preg_match_all($pattern, $htmlSection, $matches);
+        $results['name'] = $matches['pracownik'];
+        $results['numer_pracownik'] = $matches['numer_pracownik'];
+        $results['wydzial_pracownik'] = $matches['wydzial'];
+
+
+        return $results;
+    }
+
+
+    public function initscrap($source, $pattern, $pattern2)
+    {
+        $this->crawler = $this->client->request('GET', $source);
+
+        $output = $this->crawler->filter('body');
+        $html = $output->outerHtml();
+
+        $start = stripos($html, '<body>');
+        $end = stripos($html, '</body>', $offset = $start);
+        $length = $end - $start;
         $htmlSection = substr($html, $start, $length);
 
         preg_match_all($pattern, $htmlSection, $matches);
+        $results['value'] = $matches['value'];
+        preg_match_all($pattern2, $htmlSection, $matches);
+        $results['tydzien'] = $matches['tydzien'];
 
-        $rok['dzien'] = array_merge($rok['dzien'], $matches['dzien']);
-        $rok['hours'] = array_merge($rok['hours'], $matches['hours']);
-        $rok['przedmiot'] = array_merge($rok['przedmiot'], $matches['przedmiot']);
-        $rok['wykladowca'] = array_merge($rok['wykladowca'], $matches['wykladowca']);
-        $rok['sala'] = array_merge($rok['sala'], $matches['sala']);
+        return $results;
+    }
+
+    public function scrap($pattern, $weeks)
+    {
+        $form = $this->crawler->filter('form')->form();
+        $rok['dzien'] = $rok['hours'] = $rok['przedmiot'] = $rok['wykladowca'] = $rok['sala'] = [];
+
+        foreach ($weeks['value'] as $week) {
+            $this->crawler = $this->client->submit($form, ['dzien' => $week]);
+            $output = $this->crawler->filter('body');
+            $html = $output->outerHtml();
+
+            $start = stripos($html, '<body>');
+            $end = stripos($html, '</body>', $offset = $start);
+            $length = $end - $start;
+            $htmlSection = substr($html, $start, $length);
+
+            preg_match_all($pattern, $htmlSection, $matches);
+            $filter = array_filter($matches['dzien'], function ($item) {
+                return strlen($item) > 0;
+            });
+            $rok['dzien'] = array_merge($rok['dzien'], $filter);
+            $filter = array_filter($matches['hours'], function ($item) {
+                return strlen($item) > 0;
+            });
+            $rok['hours'] = array_merge($rok['hours'], $filter);
+            $filter = array_filter($matches['przedmiot'], function ($item) {
+                return strlen($item) > 0;
+            });
+            $rok['przedmiot'] = array_merge($rok['przedmiot'], $filter);
+            $filter = array_filter($matches['wykladowca'], function ($item) {
+                return strlen($item) > 0;
+            });
+            $rok['wykladowca'] = array_merge($rok['wykladowca'], $filter);
+            $filter = array_filter($matches['sala'], function ($item) {
+                return strlen($item) > 0;
+            });
+            $rok['sala'] = array_merge($rok['sala'], $filter);
         }
-
-        return ($rok);
-
-}
-
+        return $rok;
+    }
 }

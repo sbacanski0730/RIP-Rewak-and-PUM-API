@@ -10,6 +10,7 @@
         "ext-ctype": "*",
         "ext-iconv": "*",
         "fabpot/goutte": "^4.0",
+        "guzzlehttp/guzzle": "^7.0",
         "masterminds/html5": "^2.7",
         "symfony/console": "6.1.*",
         "symfony/css-selector": "6.1.*",
