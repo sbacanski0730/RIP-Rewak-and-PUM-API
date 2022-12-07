@@ -132,7 +132,7 @@ class Scraper
     public function scrap($pattern, $weeks)
     {
         $form = $this->crawler->filter('form')->form();
-        $rok['dzien'] = $rok['hours'] = $rok['przedmiot'] = $rok['wykladowca'] = $rok['sala'] = [];
+        $results['dzien'] = $results['godzina_start'] = $results['godzina_koniec'] = $results['przedmiot'] = $results['wykladowca'] = $results['sala'] = [];
 
         foreach ($weeks['value'] as $week) {
             $this->crawler = $this->client->submit($form, ['dzien' => $week]);
@@ -145,35 +145,23 @@ class Scraper
             $htmlSection = substr($html, $start, $length);
 
             preg_match_all($pattern, $htmlSection, $matches);
-            $filter = array_filter($matches['dzien'], function ($item) {
-                return strlen($item) > 0;
-            });
-            $rok['dzien'] = array_merge($rok['dzien'], $filter);
-            $filter = array_filter($matches['hours'], function ($item) {
-                return strlen($item) > 0;
-            });
-            $rok['hours'] = array_merge($rok['hours'], $filter);
-            $filter = array_filter($matches['przedmiot'], function ($item) {
-                return strlen($item) > 0;
-            });
-            $rok['przedmiot'] = array_merge($rok['przedmiot'], $filter);
-            $filter = array_filter($matches['wykladowca'], function ($item) {
-                return strlen($item) > 0;
-            });
-            $rok['wykladowca'] = array_merge($rok['wykladowca'], $filter);
-            $filter = array_filter($matches['sala'], function ($item) {
-                return strlen($item) > 0;
-            });
-            $rok['sala'] = array_merge($rok['sala'], $filter);
+
+            $results['dzien'] = array_merge($results['dzien'], $matches['dzien']);
+            $results['godzina_start'] = array_merge($results['godzina_start'], $matches['godzinaStart']);
+            $results['godzina_koniec'] = array_merge($results['godzina_koniec'], $matches['godzinaKoniec']);
+            $results['przedmiot'] = array_merge($results['przedmiot'], $matches['przedmiot']);
+            $results['wykladowca'] = array_merge($results['wykladowca'], $matches['wykladowca']);
+            $results['sala'] = array_merge($results['sala'], $matches['sala']);
+
         }
-        return $rok;
+        return $results;
     }
 
     public function workerscrap($pattern, $weeks)
     {
 
         $form = $this->crawler->filter('form')->form();
-        $results['dzien'] = $results['godzina'] = $results['wydzial'] = $results['sala'] = [];
+        $results['dzien'] = $results['godzina_start'] = $results['godzina_koniec'] = $results['wydzial'] = $results['sala'] = [];
         foreach ($weeks['value'] as $week) {
             $this->crawler = $this->client->submit($form, ['tydzien' => $week]);
             $output = $this->crawler->filter('body');
@@ -186,23 +174,13 @@ class Scraper
 
 
             preg_match_all($pattern, $htmlSection, $matches);
-            dd($matches);
-            $filter = array_filter($matches['dzien'], function ($item) {
-                return strlen($item) > 0;
-            });
-            $results['dzien'] = array_merge($results['dzien'], $filter);
-            $filter = array_filter($matches['godzina'], function ($item) {
-                return strlen($item) > 0;
-            });
-            $results['godzina'] = array_merge($results['godzina'], $filter);
-            $filter = array_filter($matches['wydzial'], function ($item) {
-                return strlen($item) > 0;
-            });
-            $results['wydzial'] = array_merge($results['wydzial'], $filter);
-            $filter = array_filter($matches['sala'], function ($item) {
-                return strlen($item) > 0;
-            });
-            $results['sala'] = array_merge($results['sala'], $filter);
+            $results['dzien'] = array_merge($results['dzien'], $matches['dzien']);
+            $results['godzina_start'] = array_merge($results['godzina_start'], $matches['godzinaStart']);
+            $results['godzina_koniec'] = array_merge($results['godzina_koniec'], $matches['godzinaKoniec']);
+            $results['wydzial'] = array_merge($results['wydzial'], $matches['wydzial']);
+            $results['sala'] = array_merge($results['sala'], $matches['sala']);
+
+
         }
 
 

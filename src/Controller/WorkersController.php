@@ -50,7 +50,7 @@ class WorkersController extends AbstractController
         $pattern = '/<option value="(?<value>.*?)"/m';
         $pattern2 = '/\((?<tydzien>.\d.*?)\)/m';
         $weeks = $this->scraper->initscrap($http, $pattern, $pattern2);
-        $pattern = '/[^r]><th>(?<dzien>.*?)<|<th class="x">(?<godzina>.*?)<|<div class="blok">(?<wydzial>.*?)\X	{1,}	<div class="liniaPodzialowa">(?<sala>.*?)<\/div>\X	{1,}	(?<w>.*?)</m';
+        $pattern = '/t[^r]><th>(?<dzien>.*?)<|<th class="x">(?<godzinaStart>.*?)-(?<godzinaKoniec>.*?)<|<div class="blok">(?<wydzial>.*?)\X	{1,}	<div class="liniaPodzialowa">(?<sala>.*?)<\/div>\X	{1,}	(?<w>.*?)</m';
         $worker = $this->scraper->workerscrap($pattern, $weeks);
 
         file_put_contents('json_preview_worker.json', json_encode($worker));
