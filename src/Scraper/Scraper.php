@@ -22,6 +22,7 @@ class Wyklad {
     public $timeEnd;
     public $subject;
     public $room;
+    public $wydzial;
     public $lecturer;
 }
 
@@ -162,29 +163,29 @@ class Scraper
 
         }
         $objects = [];
-
-
-        $length = count($results['godzina_start']);
-
-
-        for ($d = 0; $d < $length; $d =+ 8) {
-            for ($g = $d+1; $g < 8; $g =+ 1) {
-                $object = new Wyklad();
-                $object->date = $results['dzien'][$d];
-                $object->timeStart = $results['godzina_start'][$g];
-                $object->timeEnd = $results['godzina_koniec'][$g];
-                $object->subject = $results['przedniot'][$g];
-                $object->room = $results['sala'][$g];
-                $object->lecturer = $results['wykladowca'][$g];
-
-
-                $objects[] = $object;
-            }
-        }
-
-
-
-        return $objects;
+        return $results;
+//        $length = count($results['godzina_start']);
+//
+//        for ($d = 0; $d < $length; $d += 8) {
+//            for ($g = $d+1; $g < $d+8; $g += 1) {
+//               if (!($results['przedmiot'][$g] == "-")){
+//                    $object = new Wyklad();
+//                    $object->date = $results['dzien'][$d];
+//                    $object->timeStart = $results['godzina_start'][$g];
+//                    $object->timeEnd = $results['godzina_koniec'][$g];
+//                    $object->subject = $results['przedmiot'][$g];
+//                    $object->room = $results['sala'][$g];
+//                    $object->lecturer = $results['wykladowca'][$g];
+//
+//
+//                    $objects[] = $object;
+//               }
+//            }
+//        }
+//
+//
+//
+//        return $objects;
     }
 
     public function workerscrap($pattern, $weeks)
@@ -213,10 +214,25 @@ class Scraper
 
 
         }
+        $objects = [];
+        $length = count($results['godzina_start']);
+
+        for ($d = 0; $d < $length; $d += 8) {
+            for ($g = $d+1; $g < $d+8; $g += 1) {
+               // if (!($results['przedmiot'][$g] == "-")){
+                    $object = new Wyklad();
+                    $object->date = $results['dzien'][$d];
+                    $object->timeStart = $results['godzina_start'][$g];
+                    $object->timeEnd = $results['godzina_koniec'][$g];
+                    $object->subject = $results['przedmiot'][$g];
+                    $object->wydzial = $results['wydzial'][$g];
+                    $object->room = $results['sala'][$g];
 
 
-
-
+                    $objects[] = $object;
+               // }
+            }
+        }
 
 
         return $results;
