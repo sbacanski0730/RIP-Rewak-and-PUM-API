@@ -26,8 +26,10 @@ class SpecialityController extends AbstractController
         $pattern = '/<option value="(?<value>.*?)"/m';
         $pattern2 = '/\((?<tydzien>.\d.*?)\)/m';
         $weeks = $this->scraper->initscrap($http, $pattern, $pattern2);
-        $pattern = '/" style="font-size:13px">(?<dzien>.*?)<\/td>|<td class="godzina">(?<godzinaStart>.*?)-(?<godzinaKoniec>.*?)<\/td>|<td class="test">(?<przedmiot>.*?)<br><\/td><td class="test">(?<wykladowca>.*?)<br><\/td><td class="test2">(?<sala>.*?)<br><\/td>|class="nazwaSpecjalnosci" colspan="3">(?<grupa>.*?)<\/td>/m';
-        $array = $this->scraper->scrap($pattern, $weeks);
+        $pattern = '/class="nazwaSpecjalnosci" colspan="3">(?<grupa>.*?)<\/td>/m';
+        $pattern2 = '/" style="font-size:13px">(?<dzien>.*?)<\/td>/m';
+        $pattern3 = '/<td class="godzina">(?<godzinaStart>.*?)-(?<godzinaKoniec>.*?)<\/td>|<td class="test">(?<przedmiot>.*?)<br><\/td><td class="test">(?<wykladowca>.*?)<br><\/td><td class="test2">(?<sala>.*?)<br><\/td>/m';
+        $array = $this->scraper->scrap($pattern, $pattern2, $pattern3, $weeks);
 
         file_put_contents('json_preview.json', json_encode($array));
 

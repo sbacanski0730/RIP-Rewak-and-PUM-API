@@ -137,11 +137,11 @@ class Scraper
         return $results;
     }
 
-    public function scrap($pattern, $weeks)
+    public function scrap($pattern, $pattern2, $pattern3, $weeks)
     {
 
         $form = $this->crawler->filter('form')->form();
-        $results['dzien'] = $results['godzina_start'] = $results['godzina_koniec'] = $results['przedmiot'] = $results['wykladowca'] = $results['sala'] = [];
+        $results['dzien'] = $results['godzina_start'] = $results['godzina_koniec'] = $results['przedmiot'] = $results['wykladowca'] = $results['sala'] = $results['grupa'] = [];
 
         foreach ($weeks['value'] as $week) {
             $this->crawler = $this->client->submit($form, ['dzien' => $week]);
@@ -154,14 +154,17 @@ class Scraper
             $htmlSection = substr($html, $start, $length);
 
             preg_match_all($pattern, $htmlSection, $matches);
+            preg_match_all($pattern2, $htmlSection, $matches2);
+            preg_match_all($pattern3, $htmlSection, $matches3);
 
-            $results['dzien'] = array_merge($results['dzien'], $matches['dzien']);
-            $results['godzina_start'] = array_merge($results['godzina_start'], $matches['godzinaStart']);
-            $results['godzina_koniec'] = array_merge($results['godzina_koniec'], $matches['godzinaKoniec']);
-            $results['przedmiot'] = array_merge($results['przedmiot'], $matches['przedmiot']);
-            $results['wykladowca'] = array_merge($results['wykladowca'], $matches['wykladowca']);
-            $results['sala'] = array_merge($results['sala'], $matches['sala']);
-
+            $results['grupa'] = array_merge($results['grupa'], $matches['grupa']);
+            $results['dzien'] = array_merge($results['dzien'], $matches2['dzien']);
+            $results['godzina_start'] = array_merge($results['godzina_start'], $matches3['godzinaStart']);
+            $results['godzina_koniec'] = array_merge($results['godzina_koniec'], $matches3['godzinaKoniec']);
+            $results['przedmiot'] = array_merge($results['przedmiot'], $matches3['przedmiot']);
+            $results['wykladowca'] = array_merge($results['wykladowca'], $matches3['wykladowca']);
+            $results['sala'] = array_merge($results['sala'], $matches3['sala']);
+            dd($results);
         }
         $objects = [];
         return $results;
@@ -188,7 +191,7 @@ class Scraper
 //
 //        return $objects;
 
-  
+
     }
 
     public function workerscrap($pattern, $weeks)
