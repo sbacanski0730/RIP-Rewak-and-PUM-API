@@ -41,6 +41,28 @@ class WorkersController extends AbstractController
 
     }
 
+    #[Route('/scrap/workers/{wydzial}/{workerid}', name: 'scrap/worker')]
+
+    public function fetch2($wydzial, $workerid): Response
+    {
+
+        $http = 'http://www.plan.pwsz.legnica.edu.pl/checkNauczycielAll.php?pracownik='.$workerid."&wydzial=".$wydzial;
+        $pattern = '/<option value="(?<value>.*?)"/m';
+        $pattern2 = '/\((?<tydzien>.\d.*?)\)/m';
+        $weeks = $this->scraper->initscrap($http, $pattern, $pattern2);
+        $pattern = '/[^r]><th>(?<dzien>.*?)<|<th class="x">(?<godzina>.*?)<|<div class="blok">(?<wydzial>.*?)\X    {1,}    <div class="liniaPodzialowa">(?<sala>.*?)<\/div>\X    {1,}    (?<w>.*?)</m';
+        $worker = $this->scraper->workerscrap($pattern, $weeks);
+
+        file_put_contents('json_preview_worker.json', json_encode($worker));
+
+
+
+
+        return new Response('Json file generated sucesfully for worker with id: '.$workerid.' z wydzialu o id: '.$wydzial);
+
+
+    }
+
 
 
 }

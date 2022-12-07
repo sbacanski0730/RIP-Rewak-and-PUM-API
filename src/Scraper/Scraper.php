@@ -168,4 +168,50 @@ class Scraper
         }
         return $rok;
     }
+
+    public function workerscrap($pattern, $weeks)
+    {
+
+        $form = $this->crawler->filter('form')->form();
+        $results['dzien'] = $results['godzina'] = $results['wydzial'] = $results['sala'] = [];
+        foreach ($weeks['value'] as $week) {
+            $this->crawler = $this->client->submit($form, ['tydzien' => $week]);
+            $output = $this->crawler->filter('body');
+            $html = $output->outerHtml();
+
+            $start = stripos($html, '<body>');
+            $end = stripos($html, '</body>', $offset = $start);
+            $length = $end - $start;
+            $htmlSection = substr($html, $start, $length);
+
+
+            preg_match_all($pattern, $htmlSection, $matches);
+            dd($matches);
+            $filter = array_filter($matches['dzien'], function ($item) {
+                return strlen($item) > 0;
+            });
+            $results['dzien'] = array_merge($results['dzien'], $filter);
+            $filter = array_filter($matches['godzina'], function ($item) {
+                return strlen($item) > 0;
+            });
+            $results['godzina'] = array_merge($results['godzina'], $filter);
+            $filter = array_filter($matches['wydzial'], function ($item) {
+                return strlen($item) > 0;
+            });
+            $results['wydzial'] = array_merge($results['wydzial'], $filter);
+            $filter = array_filter($matches['sala'], function ($item) {
+                return strlen($item) > 0;
+            });
+            $results['sala'] = array_merge($results['sala'], $filter);
+        }
+
+
+
+
+
+
+        return $results;
+    }
+
+
 }
