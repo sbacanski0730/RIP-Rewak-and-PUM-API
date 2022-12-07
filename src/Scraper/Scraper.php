@@ -166,20 +166,22 @@ class Scraper
 
 
         $length = count($results['godzina_start']);
+        ini_set('memory_limit', '64M');
+
+        for ($d = 0; $d < 1; $d =+ 8) {
+            for ($g = $d+1; $g < $d+8; $g =+ 1) {
+
+                    $object = new Wyklad();
+                    $object->date = $results['dzien'][$d];
+                    $object->timeStart = $results['godzina_start'][$g];
+                    $object->timeEnd = $results['godzina_koniec'][$g];
+                    $object->subject = $results['przedmiot'][$g];
+                    $object->room = $results['sala'][$g];
+                    $object->lecturer = $results['wykladowca'][$g];
 
 
-        for ($d = 0; $d < $length; $d =+ 8) {
-            for ($g = $d+1; $g < 8; $g =+ 1) {
-                $object = new Wyklad();
-                $object->date = $results['dzien'][$d];
-                $object->timeStart = $results['godzina_start'][$g];
-                $object->timeEnd = $results['godzina_koniec'][$g];
-                $object->subject = $results['przedmiot'][$g];
-                $object->room = $results['sala'][$g];
-                $object->lecturer = $results['wykladowca'][$g];
+                    $objects[] = $object;
 
-
-                $objects[] = $object;
             }
         }
 
