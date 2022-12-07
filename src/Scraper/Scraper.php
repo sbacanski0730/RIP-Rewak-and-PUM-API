@@ -24,6 +24,7 @@ class Wyklad {
     public $room;
     public $wydzial;
     public $lecturer;
+    public $grupa;
 }
 
 class Scraper
@@ -164,32 +165,40 @@ class Scraper
             $results['przedmiot'] = array_merge($results['przedmiot'], $matches3['przedmiot']);
             $results['wykladowca'] = array_merge($results['wykladowca'], $matches3['wykladowca']);
             $results['sala'] = array_merge($results['sala'], $matches3['sala']);
-            dd($results);
+            $objects = [];
+                    $length = count($results['grupa']);
+                    $lenghth2 = count($results['sala']);
+                    dd($results);
+
+            $h=1;
+        for ($g = 0; $g < 1; $g ++) {
+
+
+            for (;$h < $lenghth2 ; $h += 7) {
+               if (!(($results['przedmiot'][$h+$g] == "-") OR ($results['przedmiot'][$h+$g] == "")) ){
+                    $object = new Wyklad();
+                    $object->date = $results['dzien'][$d;
+                    $object->grupa = $results['grupa'][$g];
+                    $object->timeStart = $results['godzina_start'][$h+$g];
+                    $object->timeEnd = $results['godzina_koniec'][$h+$g];
+                    $object->subject = $results['przedmiot'][$h+$g];
+                    $object->room = $results['sala'][$h+$g];
+                    $object->lecturer = $results['wykladowca'][$h+$g];
+                    $d++;
+
+                    $objects[] = $object;
+               }
+            }
         }
-        $objects = [];
-        return $results;
-//        $length = count($results['godzina_start']);
-//
-//        for ($d = 0; $d < $length; $d += 8) {
-//            for ($g = $d+1; $g < $d+8; $g += 1) {
-//               if (!($results['przedmiot'][$g] == "-")){
-//                    $object = new Wyklad();
-//                    $object->date = $results['dzien'][$d];
-//                    $object->timeStart = $results['godzina_start'][$g];
-//                    $object->timeEnd = $results['godzina_koniec'][$g];
-//                    $object->subject = $results['przedmiot'][$g];
-//                    $object->room = $results['sala'][$g];
-//                    $object->lecturer = $results['wykladowca'][$g];
-//
-//
-//                    $objects[] = $object;
-//               }
-//            }
-//        }
-//
-//
-//
-//        return $objects;
+
+
+
+
+        }
+
+
+        return $objects;
+
 
 
     }
