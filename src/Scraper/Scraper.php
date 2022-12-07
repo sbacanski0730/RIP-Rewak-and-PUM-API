@@ -16,7 +16,14 @@ class Wydzial {
     public $name;
     public $number;
 }
-
+class Wyklad {
+    public $date;
+    public $timeStart;
+    public $timeEnd;
+    public $subject;
+    public $room;
+    public $lecturer;
+}
 
 class Scraper
 {
@@ -154,7 +161,30 @@ class Scraper
             $results['sala'] = array_merge($results['sala'], $matches['sala']);
 
         }
-        return $results;
+        $objects = [];
+
+
+        $length = count($results['godzina_start']);
+
+
+        for ($d = 0; $d < $length; $d =+ 8) {
+            for ($g = $d+1; $g < 8; $g =+ 1) {
+                $object = new Wyklad();
+                $object->date = $results['dzien'][$d];
+                $object->timeStart = $results['godzina_start'][$g];
+                $object->timeEnd = $results['godzina_koniec'][$g];
+                $object->subject = $results['przedniot'][$g];
+                $object->room = $results['sala'][$g];
+                $object->lecturer = $results['wykladowca'][$g];
+
+
+                $objects[] = $object;
+            }
+        }
+
+
+
+        return $objects;
     }
 
     public function workerscrap($pattern, $weeks)
