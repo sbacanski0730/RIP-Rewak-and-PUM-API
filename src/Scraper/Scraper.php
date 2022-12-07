@@ -167,27 +167,27 @@ class Scraper
             $results['sala'] = array_merge($results['sala'], $matches3['sala']);
             $objects = [];
                     $length = count($results['grupa']);
-                    $lenghth2 = count($results['sala']);
-                    dd($results);
 
-            $h=1;
-        for ($g = 0; $g < 1; $g ++) {
+                    $lenghth3 = count($results['dzien']);
 
 
-            for (;$h < $lenghth2 ; $h += 7) {
-               if (!(($results['przedmiot'][$h+$g] == "-") OR ($results['przedmiot'][$h+$g] == "")) ){
+        for ($g = 0; $g < $length; $g ++) {
+            $h=1+$g;
+            for ($d = 0; $d<$lenghth3; $d++){
+            for (;$h < ($d+1)*(7*7) ; $h += 7) {
+               if (!(($results['przedmiot'][$h] == "-") OR ($results['przedmiot'][$h] == "")) ){
                     $object = new Wyklad();
-                    $object->date = $results['dzien'][$d;
+                    $object->date = $results['dzien'][$d];
                     $object->grupa = $results['grupa'][$g];
-                    $object->timeStart = $results['godzina_start'][$h+$g];
-                    $object->timeEnd = $results['godzina_koniec'][$h+$g];
-                    $object->subject = $results['przedmiot'][$h+$g];
-                    $object->room = $results['sala'][$h+$g];
-                    $object->lecturer = $results['wykladowca'][$h+$g];
-                    $d++;
+                    $object->timeStart = $results['godzina_start'][$h-1];
+                    $object->timeEnd = $results['godzina_koniec'][$h-1];
+                    $object->subject = $results['przedmiot'][$h];
+                    $object->room = $results['sala'][$h];
+                    $object->lecturer = $results['wykladowca'][$h];
+
 
                     $objects[] = $object;
-               }
+               }}
             }
         }
 
