@@ -139,6 +139,7 @@ class Scraper
 
     public function scrap($pattern, $weeks)
     {
+
         $form = $this->crawler->filter('form')->form();
         $results['dzien'] = $results['godzina_start'] = $results['godzina_koniec'] = $results['przedmiot'] = $results['wykladowca'] = $results['sala'] = [];
 
@@ -186,6 +187,8 @@ class Scraper
 //
 //
 //        return $objects;
+
+  
     }
 
     public function workerscrap($pattern, $weeks)

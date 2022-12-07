@@ -20,3 +20,9 @@ A [Docker](https://www.docker.com/)-based installer and runtime for the [Symfony
 
 Symfony Docker is available under the MIT License.
 
+
+## Scraper Ends
+
+`/scrap/specjalnosc/{nazwa Specjalnosci, np. s4PAM}`
+`/scrap/workers`
+`/scrap/worker/{id wydzialu}/{id pracownika}`
