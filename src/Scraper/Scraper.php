@@ -17,6 +17,7 @@ class Wydzial {
     public $number;
 }
 
+
 class Scraper
 {
     private $client;
@@ -34,7 +35,7 @@ class Scraper
         $this->crawler = $this->client->request('GET', $source);
         $output = $this->crawler->filter('body');
         $html = $output->outerHtml();
-        
+
 
         $start = stripos($html, '<body>');
         $end = stripos($html, '</body>', $offset = $start);
