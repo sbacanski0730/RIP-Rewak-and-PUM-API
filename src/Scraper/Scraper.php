@@ -161,7 +161,7 @@ class Scraper
     {
 
         $form = $this->crawler->filter('form')->form();
-        $results['dzien'] = $results['godzina_start'] = $results['godzina_koniec'] = $results['wydzial'] = $results['sala'] = [];
+        $results['dzien'] = $results['godzina_start'] = $results['godzina_koniec'] = $results['wydzial'] = $results['sala'] = $results['przedmiot'] = [];
         foreach ($weeks['value'] as $week) {
             $this->crawler = $this->client->submit($form, ['tydzien' => $week]);
             $output = $this->crawler->filter('body');
@@ -179,6 +179,7 @@ class Scraper
             $results['godzina_koniec'] = array_merge($results['godzina_koniec'], $matches['godzinaKoniec']);
             $results['wydzial'] = array_merge($results['wydzial'], $matches['wydzial']);
             $results['sala'] = array_merge($results['sala'], $matches['sala']);
+            $results['przedmiot'] = array_merge($results['przedmiot'], $matches['przedmiot']);
 
 
         }
