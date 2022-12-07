@@ -165,38 +165,31 @@ class Scraper
             $results['przedmiot'] = array_merge($results['przedmiot'], $matches3['przedmiot']);
             $results['wykladowca'] = array_merge($results['wykladowca'], $matches3['wykladowca']);
             $results['sala'] = array_merge($results['sala'], $matches3['sala']);
-            $objects = [];
-                    $length = count($results['grupa']);
+        }
+        $objects = [];
+        $length = count($results['grupa']);
 
-                    $lenghth3 = count($results['dzien']);
-
-
+        $lenghth3 = count($results['dzien']);
         for ($g = 0; $g < $length; $g ++) {
             $h=1+$g;
             for ($d = 0; $d<$lenghth3; $d++){
-            for (;$h < ($d+1)*(7*7) ; $h += 7) {
-               if (!(($results['przedmiot'][$h] == "-") OR ($results['przedmiot'][$h] == "")) ){
-                    $object = new Wyklad();
-                    $object->date = $results['dzien'][$d];
-                    $object->grupa = $results['grupa'][$g];
-                    $object->timeStart = $results['godzina_start'][$h-1];
-                    $object->timeEnd = $results['godzina_koniec'][$h-1];
-                    $object->subject = $results['przedmiot'][$h];
-                    $object->room = $results['sala'][$h];
-                    $object->lecturer = $results['wykladowca'][$h];
+                for (;$h < ($d+1)*(7*7) ; $h += 7) {
+                    if (!(($results['przedmiot'][$h] == "-") OR ($results['przedmiot'][$h] == "")) ){
+                        $object = new Wyklad();
+                        $object->date = $results['dzien'][$d];
+                        $object->grupa = $results['grupa'][$g];
+                        $object->timeStart = $results['godzina_start'][$h-1-$g];
+                        $object->timeEnd = $results['godzina_koniec'][$h-1-$g];
+                        $object->subject = $results['przedmiot'][$h];
+                        $object->room = $results['sala'][$h];
+                        $object->lecturer = $results['wykladowca'][$h];
 
 
-                    $objects[] = $object;
-               }}
+                        $objects[] = $object;
+                    }}
             }
         }
-
-
-
-
-        }
-
-
+        dd($objects);
         return $objects;
 
 
