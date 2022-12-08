@@ -44,7 +44,7 @@ class RoomController extends AbstractController
         $http = 'http://www.plan.pwsz.legnica.edu.pl/schedule_view.php?site=show_sala.php&id=10';
         $pattern = '/<div><a href="checkBudynek\.php\?(?<chwytak>.*?)<\/li>/m';
 
-        $array_rooms = $this->scraper->roominbuildscrap($http, $pattern, $buildingname);
+        $array_rooms = $this->scraper->roominbuildscrap($http, $pattern);
 
 
         file_put_contents('json_preview_rooms_in_building.json', json_encode($array_rooms));

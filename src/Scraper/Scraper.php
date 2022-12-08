@@ -292,7 +292,7 @@ class Scraper
         return $objects;
     }
 
-    public function roominbuildscrap($source, $pattern, $buldingname)
+    public function roominbuildscrap($source, $pattern
     {
         $this->crawler = $this->client->request('GET', $source);
 
@@ -319,6 +319,7 @@ class Scraper
             $results['NRsali'][0] = $results['IDconect'][0] = $temp_results['budynek'][0];
             $results_sorted[] = $results;
         }
+
 
 
         $objects = [];
