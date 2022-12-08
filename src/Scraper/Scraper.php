@@ -172,6 +172,7 @@ class Scraper
             $results['wykladowca'] = array_merge($results['wykladowca'], $matches3['wykladowca']);
             $results['sala'] = array_merge($results['sala'], $matches3['sala']);
 
+
             $length = count($results['grupa']);
 
             $lenghth3 = count($results['dzien']);
@@ -268,6 +269,58 @@ class Scraper
 
         preg_match_all($pattern, $htmlSection, $matches);
         $results['budynek'] = $matches['budynek'];
+
+        $objects = [];
+
+
+        $length = count($results['budynek']);
+
+
+        for ($i = 0; $i < $length; $i++) {
+            $object = new Budynek();
+
+
+            $object->budynek = $results['budynek'][$i];
+
+
+            $objects[] = $object;
+        }
+
+        return $objects;
+    }
+
+    public function roominbuildscrap($source, $pattern, $buldingname)
+    {
+        $this->crawler = $this->client->request('GET', $source);
+
+        $output = $this->crawler->filter('body');
+        $html = $output->outerHtml();
+
+        $start = stripos($html, '<body>');
+        $end = stripos($html, '</body>', $offset = $start);
+        $length = $end - $start;
+        $htmlSection = substr($html, $start, $length);
+
+        preg_match_all($pattern, $htmlSection, $matches);
+        $inner_results['chwytak'] = $matches['chwytak'];
+
+        $results_sorted = [];
+        $inner_pattern = '/y (?<Budynek>.*?)<|<a href="checkSala\.php\?sala\=(?<IDconect>.*?)" target="_blank">(?<NRsali>.*?)</m';
+        foreach ($inner_results['chwytak'] as $chwytak)
+        {
+            $temp_results['budynek'] = [];
+            $results['IDconect'] = $results['NRsali'] = [];
+            preg_match_all($inner_pattern, $chwytak, $matches);
+            $temp_results['budynek'] = array_merge($temp_results['budynek'], $matches['Budynek']);
+            $results['IDconect'] = array_merge($results['IDconect'], $matches['IDconect']);
+            $results['NRsali'] = array_merge($results['NRsali'], $matches['NRsali']);
+            $results['NRsali'][0]=$results['IDconect'][0]=$temp_results['budynek'][0];
+            $results_sorted[] = $results;
+        }
+
+        
+
+
 
         $objects = [];
 

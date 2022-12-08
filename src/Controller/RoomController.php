@@ -36,4 +36,23 @@ class RoomController extends AbstractController
 
     }
 
+    #[Route('/scrap/rooms/{buildingname}', name: 'scrap/rooms/building')]
+
+    public function fetch2($buildingname): Response
+    {
+
+        $http = 'http://www.plan.pwsz.legnica.edu.pl/schedule_view.php?site=show_sala.php&id=10';
+        $pattern = '/<div><a href="checkBudynek\.php\?(?<chwytak>.*?)<\/li>/m';
+
+        $array_rooms = $this->scraper->roominbuildscrap($http, $pattern, $buildingname);
+
+
+        file_put_contents('json_preview_rooms_in_building.json', json_encode($array_rooms));
+
+
+        return new Response('Json file generated sucesfully for building: '.$buildingname);
+
+
+    }
+
 }
