@@ -13,3 +13,5 @@ public/json_preview.json
 public/json_preview_name.json
 public/json_preview_wydzial.json
 public/json_preview_worker.json
+/public/json_preview_sorted_workers.json
+/public/json_preview_Buildings.json

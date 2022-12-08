@@ -17,7 +17,7 @@ class WorkersController extends AbstractController
     }
 
 
-    #[Route('/scrap/workers', name: 'scrap/workers')]
+    #[Route('/scrap/workers/', name: 'scrap/workers')]
 
     public function fetch(): Response
     {
@@ -40,6 +40,35 @@ class WorkersController extends AbstractController
 
 
     }
+
+    #[Route('/scrap/workers/{wydzialid}', name: 'scrap/workers/wydzial')]
+
+    public function fetch3($wydzialid): Response
+    {
+
+
+
+        $http = 'http://www.plan.pwsz.legnica.edu.pl/schedule_view.php?site=show_nauczyciel.php';
+        $pattern = '/show_kierunek.php&amp;id=(?<numer_wydzialu>.*?)">(?<nazwa_wydzialu>.*?)</m';
+        $wydzial = $this->scraper->wydzialscrap($http,  $pattern);
+        $pattern = '/checkNauczycielAll\.php\?pracownik=(?<numer_pracownik>.*?)&amp;wydzial=(?<wydzial>.*?)" target="_blank">((?<pracownik>.*?))</m';
+        $array_workers = $this->scraper->pracscrap($pattern);
+        $sorted=[];
+        foreach ($array_workers as $worker)
+        {
+            if ($worker->wydzial == $wydzialid) $sorted[]=$worker;
+        }
+
+
+        file_put_contents('json_preview_sorted_workers.json', json_encode($sorted));
+
+
+
+        return new Response('Json file generated sucesfully for workers from wydzial: '.$wydzialid);
+
+
+    }
+
 
     #[Route('/scrap/workers/{wydzial}/{workerid}', name: 'scrap/worker')]
 

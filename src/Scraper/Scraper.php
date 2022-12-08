@@ -27,6 +27,11 @@ class Wyklad {
     public $grupa;
 }
 
+class Budynek
+{
+    public $budynek;
+}
+
 class Scraper
 {
     private $client;
@@ -174,7 +179,7 @@ class Scraper
             for ($g = 0; $g < $length; $g ++) {
                 $h=1+$g;
                 for ($d = 0; $d<$lenghth3; $d++){
-                    for (;$h < ($d+1)*(7*7) ; $h += 7) {
+                    for (;$h < ($d+1)*((1+$length)*7) ; $h += (1+$length)) {
                         if (!(($results['przedmiot'][$h] == "-") OR ($results['przedmiot'][$h] == "")) ){
                         $object = new Wyklad();
                         $object->date = $results['dzien'][$d];
@@ -247,6 +252,40 @@ class Scraper
 
 
         return $results;
+    }
+
+    public function buildingscrap($source, $pattern)
+    {
+        $this->crawler = $this->client->request('GET', $source);
+
+        $output = $this->crawler->filter('body');
+        $html = $output->outerHtml();
+
+        $start = stripos($html, '<body>');
+        $end = stripos($html, '</body>', $offset = $start);
+        $length = $end - $start;
+        $htmlSection = substr($html, $start, $length);
+
+        preg_match_all($pattern, $htmlSection, $matches);
+        $results['budynek'] = $matches['budynek'];
+
+        $objects = [];
+
+
+        $length = count($results['budynek']);
+
+
+        for ($i = 0; $i < $length; $i++) {
+            $object = new Budynek();
+
+
+            $object->budynek = $results['budynek'][$i];
+
+
+            $objects[] = $object;
+        }
+
+        return $objects;
     }
 
 
