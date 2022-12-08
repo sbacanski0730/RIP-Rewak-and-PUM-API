@@ -30,6 +30,9 @@ class Wyklad {
 class Budynek
 {
     public $budynek;
+    public $sala;
+    public $connect;
+
 }
 
 class Scraper
@@ -306,38 +309,35 @@ class Scraper
 
         $results_sorted = [];
         $inner_pattern = '/y (?<Budynek>.*?)<|<a href="checkSala\.php\?sala\=(?<IDconect>.*?)" target="_blank">(?<NRsali>.*?)</m';
-        foreach ($inner_results['chwytak'] as $chwytak)
-        {
+        foreach ($inner_results['chwytak'] as $chwytak) {
             $temp_results['budynek'] = [];
             $results['IDconect'] = $results['NRsali'] = [];
             preg_match_all($inner_pattern, $chwytak, $matches);
             $temp_results['budynek'] = array_merge($temp_results['budynek'], $matches['Budynek']);
             $results['IDconect'] = array_merge($results['IDconect'], $matches['IDconect']);
             $results['NRsali'] = array_merge($results['NRsali'], $matches['NRsali']);
-            $results['NRsali'][0]=$results['IDconect'][0]=$temp_results['budynek'][0];
+            $results['NRsali'][0] = $results['IDconect'][0] = $temp_results['budynek'][0];
             $results_sorted[] = $results;
         }
-
-        
-
 
 
         $objects = [];
 
 
-        $length = count($results['budynek']);
+        foreach ($results_sorted as $array_build) {
 
-
-        for ($i = 0; $i < $length; $i++) {
+            $length = count($array_build['NRsali']);
             $object = new Budynek();
+            $object->budynek=[$array_build['NRsali'][0];
 
+            for ($i = 1; $i < $length+1; $i++) {
 
-            $object->budynek = $results['budynek'][$i];
+                $object->sala=$array_build['NRsali'][$i];
+                $object->connect= $results['IDconect'][$i];
 
-
-            $objects[] = $object;
-        }
-
+                $objects[] = $object;
+            }
+    }
         return $objects;
     }
 
