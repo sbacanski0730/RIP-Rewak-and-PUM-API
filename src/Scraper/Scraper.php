@@ -292,7 +292,7 @@ class Scraper
         return $objects;
     }
 
-    public function roominbuildscrap($source, $pattern
+    public function roominbuildscrap($source, $pattern)
     {
         $this->crawler = $this->client->request('GET', $source);
 
@@ -328,13 +328,13 @@ class Scraper
         foreach ($results_sorted as $array_build) {
 
             $length = count($array_build['NRsali']);
-            $object = new Budynek();
-            $object->budynek=[$array_build['NRsali'][0];
 
-            for ($i = 1; $i < $length+1; $i++) {
 
+            for ($i = 1; $i < $length; $i++) {
+                $object = new Budynek();
+                $object->budynek=$array_build['NRsali'][0];
                 $object->sala=$array_build['NRsali'][$i];
-                $object->connect= $results['IDconect'][$i];
+                $object->connect= $array_build['IDconect'][$i];
 
                 $objects[] = $object;
             }

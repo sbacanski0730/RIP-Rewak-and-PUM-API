@@ -45,9 +45,13 @@ class RoomController extends AbstractController
         $pattern = '/<div><a href="checkBudynek\.php\?(?<chwytak>.*?)<\/li>/m';
 
         $array_rooms = $this->scraper->roominbuildscrap($http, $pattern);
+        $sorted=[];
+        foreach ($array_rooms as $rooms)
+        {
+            if ($rooms->budynek == $buildingname) $sorted[]=$rooms;
+        }
 
-
-        file_put_contents('json_preview_rooms_in_building.json', json_encode($array_rooms));
+        file_put_contents('json_preview_rooms_in_building.json', json_encode($sorted));
 
 
         return new Response('Json file generated sucesfully for building: '.$buildingname);
