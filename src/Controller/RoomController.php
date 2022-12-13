@@ -29,7 +29,7 @@ class RoomController extends AbstractController
         return new JsonResponse($array_buildings);
     }
 
-    #[Route('/scrap/buildings', name: 'scrap/buildings')]
+    #[Route('/scrap/rooms', name: 'scrap/rooms')]
 
     public function fetch(): Response
     {
@@ -40,7 +40,7 @@ class RoomController extends AbstractController
         $array_buildings = $this->scraper->buildingscrap($http, $pattern);
 
 
-        file_put_contents('json_preview_Buildings.json', json_encode($array_buildings));
+        file_put_contents('rooms.json', json_encode($array_buildings));
 
 
         return new Response('Json file generated sucesfully for buildings');
@@ -63,7 +63,7 @@ class RoomController extends AbstractController
             if ($rooms->budynek == $buildingname) $sorted[]=$rooms;
         }
 
-        file_put_contents('json_preview_rooms_in_building.json', json_encode($sorted));
+        file_put_contents('rooms-'.$buildingname.'.json', json_encode($sorted));
 
 
         return new Response('Json file generated sucesfully for building: '.$buildingname);
