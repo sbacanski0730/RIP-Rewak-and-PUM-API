@@ -44,7 +44,7 @@ class RoomController extends AbstractController
 
     public function fetch2($buildingname): Response
     {
-
+        #todo: dodać zmniejszenie 1 litery w zmiennej $buildingname
         $http = 'http://www.plan.pwsz.legnica.edu.pl/schedule_view.php?site=show_sala.php&id=10';
         $pattern = '/<div><a href="checkBudynek\.php\?(?<chwytak>.*?)<\/li>/m';
 
@@ -55,7 +55,7 @@ class RoomController extends AbstractController
             if ($rooms->budynek == $buildingname) $sorted[]=$rooms;
         }
 
-        
+
 
 
         return new JsonResponse($sorted);
