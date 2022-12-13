@@ -7,6 +7,7 @@ use App\Scraper\Scraper;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpFoundation\JsonResponse;
 
 class SpecialityController extends AbstractController
 {
@@ -31,10 +32,10 @@ class SpecialityController extends AbstractController
         $pattern3 = '/<td class="godzina">(?<godzinaStart>.*?)-(?<godzinaKoniec>.*?)<\/td>|<td class="test">(?<przedmiot>.*?)<br><\/td><td class="test">(?<wykladowca>.*?)<br><\/td><td class="test2">(?<sala>.*?)<br><\/td>/m';
         $array = $this->scraper->scrap($pattern, $pattern2, $pattern3, $weeks);
 
-        file_put_contents('json_preview.json', json_encode($array));
 
 
-        return new Response('Json file generated sucesfully for speciality '.$specjalnosc);
+
+        return new JsonResponse($array);
 
 
     }

@@ -7,6 +7,7 @@ use App\Scraper\Scraper;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpFoundation\JsonResponse;
 
 class RoomController extends AbstractController
 {
@@ -31,10 +32,10 @@ class RoomController extends AbstractController
         $array_buildings = $this->scraper->buildingscrap($http, $pattern);
 
 
-        file_put_contents('rooms.json', json_encode($array_buildings));
 
 
-        return new Response('Json file generated sucesfully for buildings');
+
+        return new JsonResponse($array_buildings);
 
 
     }
@@ -54,10 +55,10 @@ class RoomController extends AbstractController
             if ($rooms->budynek == $buildingname) $sorted[]=$rooms;
         }
 
-        file_put_contents('rooms-'.$buildingname.'.json', json_encode($sorted));
+        
 
 
-        return new Response('Json file generated sucesfully for building: '.$buildingname);
+        return new JsonResponse($sorted);
 
 
     }

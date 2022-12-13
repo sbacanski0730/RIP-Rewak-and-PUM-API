@@ -5,6 +5,7 @@ use App\Scraper\Scraper;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpFoundation\JsonResponse;
 
 class WorkersController extends AbstractController
 {
@@ -31,11 +32,11 @@ class WorkersController extends AbstractController
         $name = $this->scraper->pracscrap($pattern);
 
 
-        file_put_contents('workers-group.json', json_encode($wydzial));
 
 
 
-        return new Response('Json file generated sucesfully for workers');
+
+        return new JsonResponse($wydzial);
 
 
     }
@@ -59,11 +60,11 @@ class WorkersController extends AbstractController
         }
 
 
-        file_put_contents('workers-group-'.$wydzialid.'.json', json_encode($sorted));
 
 
 
-        return new Response('Json file generated sucesfully for workers from wydzial: '.$wydzialid);
+
+        return new JsonResponse($sorted);
 
 
     }
@@ -71,22 +72,22 @@ class WorkersController extends AbstractController
 
     #[Route('/scrap/workers-group/{wydzialid}/{workerid}', name: 'scrap/worker')]
 
-    public function fetch2($wydzial, $workerid): Response
+    public function fetch2($wydzialid, $workerid): Response
     {
 
-        $http = 'http://www.plan.pwsz.legnica.edu.pl/checkNauczycielAll.php?pracownik='.$workerid."&wydzial=".$wydzial;
+        $http = 'http://www.plan.pwsz.legnica.edu.pl/checkNauczycielAll.php?pracownik='.$workerid."&wydzial=".$wydzialid;
         $pattern = '/<option value="(?<value>.*?)"/m';
         $pattern2 = '/\((?<tydzien>.\d.*?)\)/m';
         $weeks = $this->scraper->initscrap($http, $pattern, $pattern2);
         $pattern = '/t[^r]><th>(?<dzien>.*?)<|<th class="x">(?<godzinaStart>.*?)-(?<godzinaKoniec>.*?)<|<div class="blok">(?<wydzial>.*?)\X	{1,}	<div class="liniaPodzialowa">(?<sala>.*?)<\/div>\X	{1,}	(?<przedmiot>.*?)</m';
         $worker = $this->scraper->workerscrap($pattern, $weeks);
 
-        file_put_contents('workers-group-'.$wydzialid.'-'.$workerid.'.json', json_encode($worker));
 
 
 
 
-        return new Response('Json file generated sucesfully for worker with id: '.$workerid.' z wydzialu o id: '.$wydzial);
+
+        return new JsonResponse($worker);
 
 
     }
