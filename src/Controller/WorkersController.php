@@ -17,7 +17,7 @@ class WorkersController extends AbstractController
     }
 
 
-    #[Route('/scrap/workers-group/', name: 'scrap/workers-group')]
+    #[Route('/scrap/workers/', name: 'scrap/workers')]
 
     public function fetch(): Response
     {
@@ -31,7 +31,8 @@ class WorkersController extends AbstractController
         $name = $this->scraper->pracscrap($pattern);
 
 
-        file_put_contents('workers-group.json', json_encode($wydzial));
+        file_put_contents('json_preview_wydzial.json', json_encode($wydzial));
+        file_put_contents('json_preview_name.json', json_encode($name));
 
 
 
@@ -40,7 +41,7 @@ class WorkersController extends AbstractController
 
     }
 
-    #[Route('/scrap/workers-group/{wydzialid}', name: 'scrap//workers-group/wydzial')]
+    #[Route('/scrap/workers/{wydzialid}', name: 'scrap/workers/wydzial')]
 
     public function fetch3($wydzialid): Response
     {
@@ -59,7 +60,7 @@ class WorkersController extends AbstractController
         }
 
 
-        file_put_contents('workers-group-'.$wydzialid.'.json', json_encode($sorted));
+        file_put_contents('json_preview_sorted_workers.json', json_encode($sorted));
 
 
 
@@ -69,7 +70,7 @@ class WorkersController extends AbstractController
     }
 
 
-    #[Route('/scrap/workers-group/{wydzialid}/{workerid}', name: 'scrap/worker')]
+    #[Route('/scrap/workers/{wydzial}/{workerid}', name: 'scrap/worker')]
 
     public function fetch2($wydzial, $workerid): Response
     {
@@ -81,7 +82,7 @@ class WorkersController extends AbstractController
         $pattern = '/t[^r]><th>(?<dzien>.*?)<|<th class="x">(?<godzinaStart>.*?)-(?<godzinaKoniec>.*?)<|<div class="blok">(?<wydzial>.*?)\X	{1,}	<div class="liniaPodzialowa">(?<sala>.*?)<\/div>\X	{1,}	(?<przedmiot>.*?)</m';
         $worker = $this->scraper->workerscrap($pattern, $weeks);
 
-        file_put_contents('workers-group-'.$wydzialid.'-'.$workerid.'.json', json_encode($worker));
+        file_put_contents('json_preview_worker.json', json_encode($worker));
 
 
 
