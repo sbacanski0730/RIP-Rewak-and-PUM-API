@@ -23,6 +23,12 @@ route {
         # Extra directives
         {$MERCURE_EXTRA_DIRECTIVES}
     }
+    header {
+        Access-Control-Allow-Origin *
+        Access-Control-Allow-Credentials true
+        Access-Control-Allow-Methods *
+        Access-Control-Allow-Headers *
+    }
     vulcain
     push
     php_fastcgi unix//var/run/php/php-fpm.sock
