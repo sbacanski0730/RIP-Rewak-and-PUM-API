@@ -1,3 +1,6 @@
+.github
+.idea
+
 
 ###> symfony/framework-bundle ###
 /.env.local
@@ -8,12 +11,3 @@
 /var/
 /vendor/
 ###< symfony/framework-bundle ###
-public/test.json
-public/json_preview.json
-public/json_preview_name.json
-public/json_preview_wydzial.json
-public/json_preview_worker.json
-/public/json_preview_sorted_workers.json
-/public/json_preview_Buildings.json
-/public/json_preview_rooms_in_building.json
-/public/workers-group.json
