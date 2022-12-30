@@ -21,22 +21,28 @@ class CourseRepository extends ServiceEntityRepository
         parent::__construct($registry, Course::class);
     }
 
-    public function save(Course $entity, bool $flush = false): void
+    public function save(Course $entity): void
     {
-        $this->getEntityManager()->persist($entity);
 
-        if ($flush) {
-            $this->getEntityManager()->flush();
-        }
+        $this->getEntityManager()->persist($entity);
     }
 
-    public function remove(Course $entity, bool $flush = false): void
-    {
-        $this->getEntityManager()->remove($entity);
+    public function flush() {
+        $this->getEntityManager()->flush();
+    }
 
-        if ($flush) {
-            $this->getEntityManager()->flush();
-        }
+    public function deleteAll() {
+        $this->createQueryBuilder('del')->delete()->where('1=1')->getQuery()->execute();
+    }
+
+    public function findOneByGroup($value): ?Course
+    {
+        return $this->createQueryBuilder('c')
+            ->andWhere(':val like CONCAT(c.id, \'%\')')
+            ->setParameter('val', $value)
+            ->getQuery()
+            ->getOneOrNullResult()
+        ;
     }
 
 //    /**

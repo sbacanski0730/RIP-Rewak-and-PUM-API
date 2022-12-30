@@ -11,15 +11,16 @@ use Doctrine\Common\Collections\Collection;
 
 use Doctrine\ORM\Mapping as ORM;
 use ApiPlatform\Metadata\GetCollection;
+use ApiPlatform\Metadata\Get;
 
 #[ORM\Entity(repositoryClass: DepartmentRepository::class)]
 #[ApiResource(operations: [
-    new GetCollection()
+    new GetCollection(),
+    new Get()
 ])]
 class Department
 {
     #[ORM\Id]
-    #[ORM\GeneratedValue]
     #[ORM\Column]
     private ?int $id = null;
 
@@ -29,11 +30,16 @@ class Department
     #[ORM\OneToMany(targetEntity: Event::class, mappedBy: 'department')]
     private $events;
 
+    #[ORM\OneToMany(targetEntity: Course::class, mappedBy: 'department')]
+    private $courses;
+
+
     #[ORM\Column(length: 255)]
     private ?string $name = null;
 
     public function __construct() {
         $this->workers = new ArrayCollection();
+        $this->courses = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -45,4 +51,43 @@ class Department
     {
         return $this->name;
     }
+
+    public function getWorkers(): Collection
+    {
+        return $this->workers;
+    }
+    public function setId($id): self
+    {
+        $this->id = $id;
+
+        return $this;
+    }
+
+    public function setName($name): self
+    {
+        $this->name = $name;
+        return $this;
+    }
+
+    public function setWorkers($workers): self
+    {
+        $this->workers = $workers;
+        return $this;
+    }
+
+    public function addCourse($course): self
+    {
+        if (!$this->courses->contains($course)) {
+            $this->courses[] = $course;
+        }
+        return $this;
+    }
+    public function addWorker($worker): self
+    {
+        if (!$this->workers->contains($worker)) {
+            $this->workers[] = $worker;
+        }
+        return $this;
+    }
+
 }

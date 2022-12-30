@@ -14,21 +14,27 @@ use ApiPlatform\Metadata\GetCollection;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 
+
+use ApiPlatform\Doctrine\Orm\Filter\SearchFilter;
 use ApiPlatform\Metadata\ApiResource;
 use ApiPlatform\Metadata\ApiProperty;
+use ApiPlatform\Metadata\ApiFilter;
 
+#[ApiResource(operations: [
+    new GetCollection(),
+    new Get()
+])]
 #[ORM\Entity(repositoryClass: WorkerRepository::class)]
 class Worker
 {
     #[ORM\Id]
-    #[ORM\GeneratedValue]
     #[ORM\Column]
     private ?int $id = null;
 
     #[ORM\Column(length: 255)]
     private ?string $name = null;
     
-    #[ORM\ManyToMany(targetEntity: Department::class)]
+    #[ORM\ManyToMany(targetEntity: Department::class, inversedBy: 'workers')]
     private $departments;
 
     #[ApiProperty]
@@ -53,6 +59,24 @@ class Worker
     public function getDepartments(): Collection
     {
         return $this->departments;
+    }
+
+    public function setId($id): self
+    {
+        $this->id = $id;
+        return $this;
+    }
+
+    public function setName($name): self
+    {
+        $this->name = $name;
+        return $this;
+    }
+
+    public function setDepartments($departments): self
+    {
+        $this->departments = $departments;
+        return $this;
     }
 
     public function getEvents(): Collection

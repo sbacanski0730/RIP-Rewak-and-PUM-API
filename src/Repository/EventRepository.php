@@ -21,24 +21,20 @@ class EventRepository extends ServiceEntityRepository
         parent::__construct($registry, Event::class);
     }
 
-    public function save(Event $entity, bool $flush = false): void
+
+    public function save(Event $entity): void
     {
+
         $this->getEntityManager()->persist($entity);
-
-        if ($flush) {
-            $this->getEntityManager()->flush();
-        }
     }
 
-    public function remove(Event $entity, bool $flush = false): void
-    {
-        $this->getEntityManager()->remove($entity);
-
-        if ($flush) {
-            $this->getEntityManager()->flush();
-        }
+    public function flush() {
+        $this->getEntityManager()->flush();
     }
 
+    public function deleteAll() {
+        $this->createQueryBuilder('del')->delete()->where('1=1')->getQuery()->execute();
+    }
 //    /**
 //     * @return Event[] Returns an array of Event objects
 //     */

@@ -1,0 +1,2058 @@
+
+ [
+    {
+        "name": "Andrzejczyk Pawe? mgr in?. ",
+        "id": "4",
+        "department": "1"
+    },
+    {
+        "name": "Bednarz Nadine mgr ",
+        "id": "7",
+        "department": "1"
+    },
+    {
+        "name": "Bernatek-Zagu?a Izabela dr ",
+        "id": "9",
+        "department": "1"
+    },
+    {
+        "name": "Bezdziecka Agnieszka mgr ",
+        "id": "10605",
+        "department": "1"
+    },
+    {
+        "name": "Bonarski Piotr mgr in?. ",
+        "id": "10802",
+        "department": "1"
+    },
+    {
+        "name": "Budka Jan dr ",
+        "id": "19",
+        "department": "1"
+    },
+    {
+        "name": "Burduk Robert dr hab. in?. ",
+        "id": "22",
+        "department": "1"
+    },
+    {
+        "name": "Burduk Anna dr hab. in?. ",
+        "id": "10682",
+        "department": "1"
+    },
+    {
+        "name": "Chapman Patrick  ",
+        "id": "10333",
+        "department": "1"
+    },
+    {
+        "name": "Czarnecka Joanna mgr ",
+        "id": "29",
+        "department": "1"
+    },
+    {
+        "name": "Domaga?a Zygmunt dr in?. ",
+        "id": "10226",
+        "department": "1"
+    },
+    {
+        "name": "Domi?ska-Werbel Dorota dr ",
+        "id": "35",
+        "department": "1"
+    },
+    {
+        "name": "Drzazga Julita  mgr in?. ",
+        "id": "10803",
+        "department": "1"
+    },
+    {
+        "name": "Drzystek Wioletta dr ",
+        "id": "39",
+        "department": "1"
+    },
+    {
+        "name": "Duda Jan mgr in?. ",
+        "id": "40",
+        "department": "1"
+    },
+    {
+        "name": "Dudzi?ski W?odzimierz prof. dr hab. in?. ",
+        "id": "10698",
+        "department": "1"
+    },
+    {
+        "name": "D?browska Magdalena dr ",
+        "id": "31",
+        "department": "1"
+    },
+    {
+        "name": "D?bowski Daniel dr in?. ",
+        "id": "10367",
+        "department": "1"
+    },
+    {
+        "name": "Fry?lewicz Zbigniew dr in?. ",
+        "id": "46",
+        "department": "1"
+    },
+    {
+        "name": "Gnitecka Renata dr in?. ",
+        "id": "49",
+        "department": "1"
+    },
+    {
+        "name": "Gorzela?czyk Marek dr ",
+        "id": "10543",
+        "department": "1"
+    },
+    {
+        "name": "Groszewska Ewa dr ",
+        "id": "10503",
+        "department": "1"
+    },
+    {
+        "name": "Grzybowski Arkadiusz dr in?. ",
+        "id": "55",
+        "department": "1"
+    },
+    {
+        "name": "G?ra-Pacho? Dorota mgr ",
+        "id": "10497",
+        "department": "1"
+    },
+    {
+        "name": "G?rska-Zaj?c J?zefa mgr in?. ",
+        "id": "50",
+        "department": "1"
+    },
+    {
+        "name": "Habiniak  Leopold dr ",
+        "id": "10606",
+        "department": "1"
+    },
+    {
+        "name": "Hojniak Roman mgr in?. ",
+        "id": "61",
+        "department": "1"
+    },
+    {
+        "name": "H?bscher Kornelia dr ",
+        "id": "62",
+        "department": "1"
+    },
+    {
+        "name": "Izbia?ska Irena mgr ",
+        "id": "65",
+        "department": "1"
+    },
+    {
+        "name": "Janiak Tomasz dr ",
+        "id": "10805",
+        "department": "1"
+    },
+    {
+        "name": "Janus Andrzej dr hab. in?. ",
+        "id": "10607",
+        "department": "1"
+    },
+    {
+        "name": "Jasiak-Kaczmarek Bo?ena mgr ",
+        "id": "70",
+        "department": "1"
+    },
+    {
+        "name": "Jasi?ski Zdzis?aw prof. dr hab. in?. ",
+        "id": "8",
+        "department": "1"
+    },
+    {
+        "name": "Jesionek Krzysztof prof. dr hab. in?. ",
+        "id": "10752",
+        "department": "1"
+    },
+    {
+        "name": "J?wiakowski Pawe? dr ",
+        "id": "10047",
+        "department": "1"
+    },
+    {
+        "name": "Karli?ska Ewa mgr ",
+        "id": "10417",
+        "department": "1"
+    },
+    {
+        "name": "Kenc Joanna dr ",
+        "id": "83",
+        "department": "1"
+    },
+    {
+        "name": "Klosow Aleksander dr ",
+        "id": "85",
+        "department": "1"
+    },
+    {
+        "name": "Kolbusz Krzysztof mgr in?. ",
+        "id": "10289",
+        "department": "1"
+    },
+    {
+        "name": "Kopi?ski Adam prof. dr hab. ",
+        "id": "10701",
+        "department": "1"
+    },
+    {
+        "name": "Kordecki Wojciech dr hab. in?. ",
+        "id": "10283",
+        "department": "1"
+    },
+    {
+        "name": "Kory? Agnieszka mgr ",
+        "id": "10391",
+        "department": "1"
+    },
+    {
+        "name": "Kos Agnieszka dr ",
+        "id": "10282",
+        "department": "1"
+    },
+    {
+        "name": "Kostek Filip mgr ",
+        "id": "10604",
+        "department": "1"
+    },
+    {
+        "name": "Kowal-Orczykowska Anna dr ",
+        "id": "97",
+        "department": "1"
+    },
+    {
+        "name": "Kowalski Tadeusz dr ",
+        "id": "10542",
+        "department": "1"
+    },
+    {
+        "name": "Kowalski Sebastian mgr in?. ",
+        "id": "10815",
+        "department": "1"
+    },
+    {
+        "name": "Kozerski Stefan dr in?.  ",
+        "id": "10678",
+        "department": "1"
+    },
+    {
+        "name": "Kryszkowski S?awomir dr ",
+        "id": "10429",
+        "department": "1"
+    },
+    {
+        "name": "Kubik Rafa? dr ",
+        "id": "10392",
+        "department": "1"
+    },
+    {
+        "name": "Kurkowska Barbara mgr ",
+        "id": "10046",
+        "department": "1"
+    },
+    {
+        "name": "Ku? Jerzy dr in?. ",
+        "id": "108",
+        "department": "1"
+    },
+    {
+        "name": "Kwa?nik Jerzy dr in?. ",
+        "id": "109",
+        "department": "1"
+    },
+    {
+        "name": "Kwoka Tomasz mgr ",
+        "id": "110",
+        "department": "1"
+    },
+    {
+        "name": "K?osowski S?awomir dr ",
+        "id": "10511",
+        "department": "1"
+    },
+    {
+        "name": "K?dzierski Leszek dr ",
+        "id": "10388",
+        "department": "1"
+    },
+    {
+        "name": "Lesiuk Grzegorz dr hab. in?. ",
+        "id": "10814",
+        "department": "1"
+    },
+    {
+        "name": "Lewandowska-Bratek Justyna dr ",
+        "id": "10665",
+        "department": "1"
+    },
+    {
+        "name": "Lisowska Gabriela mgr ",
+        "id": "10435",
+        "department": "1"
+    },
+    {
+        "name": "Macuga Pawe? mgr ",
+        "id": "122",
+        "department": "1"
+    },
+    {
+        "name": "Marek Andrzej mgr ",
+        "id": "126",
+        "department": "1"
+    },
+    {
+        "name": "Medy?ski Daniel dr in?. ",
+        "id": "130",
+        "department": "1"
+    },
+    {
+        "name": "Michalski Dariusz dr in?. ",
+        "id": "10306",
+        "department": "1"
+    },
+    {
+        "name": "Miedzi?ski Marek dr ",
+        "id": "10535",
+        "department": "1"
+    },
+    {
+        "name": "Mischke W?odzimierz dr ",
+        "id": "10729",
+        "department": "1"
+    },
+    {
+        "name": "Motyka Piotr mgr in?. ",
+        "id": "10541",
+        "department": "1"
+    },
+    {
+        "name": "Mucha Wojciech dr ",
+        "id": "10524",
+        "department": "1"
+    },
+    {
+        "name": "Muraszka Maria mgr ",
+        "id": "163",
+        "department": "1"
+    },
+    {
+        "name": "Nadybski Piotr dr in?. ",
+        "id": "299",
+        "department": "1"
+    },
+    {
+        "name": "Omelan Lilia dr ",
+        "id": "143",
+        "department": "1"
+    },
+    {
+        "name": "Panasiuk Andrzej prof. dr hab. ",
+        "id": "10661",
+        "department": "1"
+    },
+    {
+        "name": "Paszyn Agnieszka mgr in?. ",
+        "id": "10676",
+        "department": "1"
+    },
+    {
+        "name": "Pelc Tomasz mgr in?. ",
+        "id": "10699",
+        "department": "1"
+    },
+    {
+        "name": "Pietkiewicz Jerzy prof. dr hab. in?. ",
+        "id": "147",
+        "department": "1"
+    },
+    {
+        "name": "Pobirchenko Natalia prof. dr hab. ",
+        "id": "10337",
+        "department": "1"
+    },
+    {
+        "name": "Prus B?a?ej dr ",
+        "id": "10354",
+        "department": "1"
+    },
+    {
+        "name": "P?askonka-Fietkowska Janina mgr ",
+        "id": "151",
+        "department": "1"
+    },
+    {
+        "name": "Radkowska Jolanta dr ",
+        "id": "158",
+        "department": "1"
+    },
+    {
+        "name": "Radkowski Krzysztof dr ",
+        "id": "159",
+        "department": "1"
+    },
+    {
+        "name": "Rajczakowska Ewa mgr ",
+        "id": "10686",
+        "department": "1"
+    },
+    {
+        "name": "Rewak Krzysztof mgr in?. ",
+        "id": "10377",
+        "department": "1"
+    },
+    {
+        "name": "Rezerwacja WT    ",
+        "id": "10609",
+        "department": "1"
+    },
+    {
+        "name": "Rezerwacja WT2    ",
+        "id": "10716",
+        "department": "1"
+    },
+    {
+        "name": "Rudnicka Bo?ena dr ",
+        "id": "167",
+        "department": "1"
+    },
+    {
+        "name": "Rusin Karol dr ",
+        "id": "10361",
+        "department": "1"
+    },
+    {
+        "name": "Ryba Przemys?aw dr in?. ",
+        "id": "169",
+        "department": "1"
+    },
+    {
+        "name": "Rzucid?o Jakub dr ",
+        "id": "10382",
+        "department": "1"
+    },
+    {
+        "name": "R?bowski Ryszard dr in?. ",
+        "id": "161",
+        "department": "1"
+    },
+    {
+        "name": "Sadowski Krystian mgr in?. ",
+        "id": "10286",
+        "department": "1"
+    },
+    {
+        "name": "Selera Izabela mgr ",
+        "id": "172",
+        "department": "1"
+    },
+    {
+        "name": "Selwat Karol dr ",
+        "id": "173",
+        "department": "1"
+    },
+    {
+        "name": "Seminarium przemys?owe (fakultatywne)    ",
+        "id": "10714",
+        "department": "1"
+    },
+    {
+        "name": "Sieja Marcin dr ",
+        "id": "178",
+        "department": "1"
+    },
+    {
+        "name": "Siudak Przemys?aw dr ",
+        "id": "182",
+        "department": "1"
+    },
+    {
+        "name": "Skowron Pawe? dr ",
+        "id": "10421",
+        "department": "1"
+    },
+    {
+        "name": "Spotkanie organizacyjne    ",
+        "id": "10670",
+        "department": "1"
+    },
+    {
+        "name": "Spotkanie organizacyjne   ",
+        "id": "10675",
+        "department": "1"
+    },
+    {
+        "name": "Spotkanie organizacyjne   ",
+        "id": "10774",
+        "department": "1"
+    },
+    {
+        "name": "Spotkanie organizacyjne godz. 16.00-17.30  ",
+        "id": "10672",
+        "department": "1"
+    },
+    {
+        "name": "Spotkanie organizacyjne godz. 13.30-15.00  ",
+        "id": "10674",
+        "department": "1"
+    },
+    {
+        "name": "Spotkanie organizacyjne    ",
+        "id": "10669",
+        "department": "1"
+    },
+    {
+        "name": "Spotkanie organizacyjne godz. 16.00-17.30  ",
+        "id": "10671",
+        "department": "1"
+    },
+    {
+        "name": "Spotkanie organizacyjne    ",
+        "id": "10668",
+        "department": "1"
+    },
+    {
+        "name": "Spotkanie organizacyjne godz. 11.45-13.15  ",
+        "id": "10673",
+        "department": "1"
+    },
+    {
+        "name": "Stanis?awska Marta dr ",
+        "id": "10394",
+        "department": "1"
+    },
+    {
+        "name": "Stawarz ?ukasz mgr ",
+        "id": "188",
+        "department": "1"
+    },
+    {
+        "name": "Stechnij Tomasz dr in?. ",
+        "id": "10185",
+        "department": "1"
+    },
+    {
+        "name": "Supranowicz Renata mgr in?. ",
+        "id": "193",
+        "department": "1"
+    },
+    {
+        "name": "Szczepankowska J?zefa mgr ",
+        "id": "196",
+        "department": "1"
+    },
+    {
+        "name": "Szkic-Czech Ewa dr ",
+        "id": "10662",
+        "department": "1"
+    },
+    {
+        "name": "Szkolenie    ",
+        "id": "10649",
+        "department": "1"
+    },
+    {
+        "name": "Szkolenie godz. 9.00-10.30   ",
+        "id": "10820",
+        "department": "1"
+    },
+    {
+        "name": "Szudrowicz-Garstka Ma?gorzata dr ",
+        "id": "317",
+        "department": "1"
+    },
+    {
+        "name": "Szyd?owski Eugeniusz dr ",
+        "id": "259",
+        "department": "1"
+    },
+    {
+        "name": "Szyller Jan mgr ",
+        "id": "10684",
+        "department": "1"
+    },
+    {
+        "name": "Tracz Marcin mgr in?. ",
+        "id": "10663",
+        "department": "1"
+    },
+    {
+        "name": "Tuora ? Schwierskott Ewa dr hab. ",
+        "id": "10432",
+        "department": "1"
+    },
+    {
+        "name": "Ulewski Jerzy mgr ",
+        "id": "10431",
+        "department": "1"
+    },
+    {
+        "name": "Urbanik Witold dr ",
+        "id": "204",
+        "department": "1"
+    },
+    {
+        "name": "WAKAT_J?zyk_1   ",
+        "id": "10779",
+        "department": "1"
+    },
+    {
+        "name": "WAKAT_J?zyk_2   ",
+        "id": "10529",
+        "department": "1"
+    },
+    {
+        "name": "WAKAT_J?zyk_3    ",
+        "id": "10778",
+        "department": "1"
+    },
+    {
+        "name": "WAKAT_R1    ",
+        "id": "10807",
+        "department": "1"
+    },
+    {
+        "name": "WAKAT_R2    ",
+        "id": "10808",
+        "department": "1"
+    },
+    {
+        "name": "WAKAT_R3    ",
+        "id": "10809",
+        "department": "1"
+    },
+    {
+        "name": "WAKAT_WT2    ",
+        "id": "10436",
+        "department": "1"
+    },
+    {
+        "name": "WAKAT_WT3    ",
+        "id": "10437",
+        "department": "1"
+    },
+    {
+        "name": "WAKAT_WT4   ",
+        "id": "10528",
+        "department": "1"
+    },
+    {
+        "name": "WAKAT_s4ZIP    ",
+        "id": "10679",
+        "department": "1"
+    },
+    {
+        "name": "Wawrzyniak Anita mgr ",
+        "id": "210",
+        "department": "1"
+    },
+    {
+        "name": "Wierzbicki  Mateusz  mgr ",
+        "id": "10677",
+        "department": "1"
+    },
+    {
+        "name": "Wi?c?awek Rafa? dr in?. ",
+        "id": "10804",
+        "department": "1"
+    },
+    {
+        "name": "Wnukowska Bogumi?a dr hab. in?. ",
+        "id": "308",
+        "department": "1"
+    },
+    {
+        "name": "Wrzecioniarz Piotr dr hab. in?. ",
+        "id": "10683",
+        "department": "1"
+    },
+    {
+        "name": "W?torek Bogumi?a dr ",
+        "id": "211",
+        "department": "1"
+    },
+    {
+        "name": "W?dzina Dariusz dr ",
+        "id": "212",
+        "department": "1"
+    },
+    {
+        "name": "Zajchowska Sylwia mgr ",
+        "id": "223",
+        "department": "1"
+    },
+    {
+        "name": "Zamojski Wojciech prof. dr hab. in?. ",
+        "id": "10220",
+        "department": "1"
+    },
+    {
+        "name": "Zurek Arkadiusz mgr ",
+        "id": "10612",
+        "department": "1"
+    },
+    {
+        "name": "Zurek Anna mgr ",
+        "id": "10667",
+        "department": "1"
+    },
+    {
+        "name": "j. polski - gr. ukrai?ska   ",
+        "id": "10816",
+        "department": "1"
+    },
+    {
+        "name": "?ado?ski Wies?aw dr in?. ",
+        "id": "116",
+        "department": "1"
+    },
+    {
+        "name": "?akomska Agnieszka mgr ",
+        "id": "118",
+        "department": "1"
+    },
+    {
+        "name": "?akomski Witold mgr ",
+        "id": "10712",
+        "department": "1"
+    },
+    {
+        "name": "?u?ny Jan mgr ",
+        "id": "119",
+        "department": "1"
+    },
+    {
+        "name": "??kawa Zofia dr ",
+        "id": "246",
+        "department": "1"
+    },
+    {
+        "name": "?muda Marcin mgr in?. ",
+        "id": "10434",
+        "department": "1"
+    },
+    {
+        "name": "Adamska-Osada Aleksandra dr ",
+        "id": "362",
+        "department": "2"
+    },
+    {
+        "name": "Babiuch Helena dr ",
+        "id": "5",
+        "department": "2"
+    },
+    {
+        "name": "Bernatek-Zagu?a Izabela dr ",
+        "id": "9",
+        "department": "2"
+    },
+    {
+        "name": "Bezdziecka Agnieszka mgr ",
+        "id": "10605",
+        "department": "2"
+    },
+    {
+        "name": "Biegun Edward mgr ",
+        "id": "10",
+        "department": "2"
+    },
+    {
+        "name": "Buchla Ma?gorzata dr ",
+        "id": "18",
+        "department": "2"
+    },
+    {
+        "name": "Buczko Jerzy dr ",
+        "id": "10186",
+        "department": "2"
+    },
+    {
+        "name": "Bujnowska Ma?gorzata dr n. med. ",
+        "id": "330",
+        "department": "2"
+    },
+    {
+        "name": "B?aszczyk-Szabat Agnieszka dr ",
+        "id": "312",
+        "department": "2"
+    },
+    {
+        "name": "Chapman Patrick  ",
+        "id": "10333",
+        "department": "2"
+    },
+    {
+        "name": "Czarkowski Marek mgr ",
+        "id": "10390",
+        "department": "2"
+    },
+    {
+        "name": "Czarnecka Joanna mgr ",
+        "id": "29",
+        "department": "2"
+    },
+    {
+        "name": "Domi?ska-Werbel Dorota dr ",
+        "id": "35",
+        "department": "2"
+    },
+    {
+        "name": "Drzystek Wioletta dr ",
+        "id": "39",
+        "department": "2"
+    },
+    {
+        "name": "D?browa Pawe? dr in?. ",
+        "id": "10360",
+        "department": "2"
+    },
+    {
+        "name": "Grelowska Wanda dr hab. ",
+        "id": "10128",
+        "department": "2"
+    },
+    {
+        "name": "Groszewska Ewa dr ",
+        "id": "10503",
+        "department": "2"
+    },
+    {
+        "name": "G?ra-Pacho? Dorota mgr ",
+        "id": "10497",
+        "department": "2"
+    },
+    {
+        "name": "G?rska-Zaj?c J?zefa mgr in?. ",
+        "id": "50",
+        "department": "2"
+    },
+    {
+        "name": "Hojniak Roman mgr in?. ",
+        "id": "61",
+        "department": "2"
+    },
+    {
+        "name": "H?bscher Kornelia dr ",
+        "id": "62",
+        "department": "2"
+    },
+    {
+        "name": "Jagie??o Zdzis?aw dr hab. ",
+        "id": "10127",
+        "department": "2"
+    },
+    {
+        "name": "Jarocki ?ukasz dr ",
+        "id": "10713",
+        "department": "2"
+    },
+    {
+        "name": "Jasiak-Kaczmarek Bo?ena mgr ",
+        "id": "70",
+        "department": "2"
+    },
+    {
+        "name": "J?wiakowski Pawe? dr ",
+        "id": "10047",
+        "department": "2"
+    },
+    {
+        "name": "Kaczmarczyk Tomasz dr ",
+        "id": "10525",
+        "department": "2"
+    },
+    {
+        "name": "Karli?ska Ewa mgr ",
+        "id": "10417",
+        "department": "2"
+    },
+    {
+        "name": "Kazimierowicz Marek dr ",
+        "id": "10291",
+        "department": "2"
+    },
+    {
+        "name": "Klimczak Marcin mgr ",
+        "id": "10526",
+        "department": "2"
+    },
+    {
+        "name": "Kobes Pawe? dr ",
+        "id": "86",
+        "department": "2"
+    },
+    {
+        "name": "Kory? Agnieszka mgr ",
+        "id": "10391",
+        "department": "2"
+    },
+    {
+        "name": "Kos Agnieszka dr ",
+        "id": "10282",
+        "department": "2"
+    },
+    {
+        "name": "Kostek Filip mgr ",
+        "id": "10604",
+        "department": "2"
+    },
+    {
+        "name": "Kowal-Orczykowska Anna dr ",
+        "id": "97",
+        "department": "2"
+    },
+    {
+        "name": "Kryszkowski S?awomir dr ",
+        "id": "10429",
+        "department": "2"
+    },
+    {
+        "name": "Kubik Rafa? dr ",
+        "id": "10392",
+        "department": "2"
+    },
+    {
+        "name": "Kurkowska Barbara mgr ",
+        "id": "10046",
+        "department": "2"
+    },
+    {
+        "name": "Kwoka Tomasz mgr ",
+        "id": "110",
+        "department": "2"
+    },
+    {
+        "name": "K?dzierski Leszek dr ",
+        "id": "10388",
+        "department": "2"
+    },
+    {
+        "name": "Lewandowska-Bratek Justyna dr ",
+        "id": "10665",
+        "department": "2"
+    },
+    {
+        "name": "Lisowska Gabriela mgr ",
+        "id": "10435",
+        "department": "2"
+    },
+    {
+        "name": "Maciak Gra?yna dr ",
+        "id": "10090",
+        "department": "2"
+    },
+    {
+        "name": "Macuga Pawe? mgr ",
+        "id": "122",
+        "department": "2"
+    },
+    {
+        "name": "Majewicz  Grzegorz mgr ",
+        "id": "305",
+        "department": "2"
+    },
+    {
+        "name": "Marek Andrzej mgr ",
+        "id": "126",
+        "department": "2"
+    },
+    {
+        "name": "Mucha Wojciech dr ",
+        "id": "10524",
+        "department": "2"
+    },
+    {
+        "name": "Muraszka Maria mgr ",
+        "id": "163",
+        "department": "2"
+    },
+    {
+        "name": "Niemiec Piotr dr ",
+        "id": "10735",
+        "department": "2"
+    },
+    {
+        "name": "Nowak Kamil mgr ",
+        "id": "10780",
+        "department": "2"
+    },
+    {
+        "name": "Nowakowski Robert mgr in?. ",
+        "id": "10515",
+        "department": "2"
+    },
+    {
+        "name": "Omelan Lilia dr ",
+        "id": "143",
+        "department": "2"
+    },
+    {
+        "name": "Panasiuk Andrzej prof. dr hab. ",
+        "id": "10661",
+        "department": "2"
+    },
+    {
+        "name": "Pobirchenko Natalia prof. dr hab. ",
+        "id": "10337",
+        "department": "2"
+    },
+    {
+        "name": "Polakiewicz Edward mgr ",
+        "id": "10381",
+        "department": "2"
+    },
+    {
+        "name": "Rezerwacja    ",
+        "id": "295",
+        "department": "2"
+    },
+    {
+        "name": "Rezerwacja   ",
+        "id": "10175",
+        "department": "2"
+    },
+    {
+        "name": "Rezerwacja 3     ",
+        "id": "10598",
+        "department": "2"
+    },
+    {
+        "name": "Rudnicka Bo?ena dr ",
+        "id": "167",
+        "department": "2"
+    },
+    {
+        "name": "Rusin Karol dr ",
+        "id": "10361",
+        "department": "2"
+    },
+    {
+        "name": "Rzucid?o Jakub dr ",
+        "id": "10382",
+        "department": "2"
+    },
+    {
+        "name": "Selera Izabela mgr ",
+        "id": "172",
+        "department": "2"
+    },
+    {
+        "name": "Sieja Marcin dr ",
+        "id": "178",
+        "department": "2"
+    },
+    {
+        "name": "Siudak Przemys?aw dr ",
+        "id": "182",
+        "department": "2"
+    },
+    {
+        "name": "Skwarek Beata dr ",
+        "id": "10223",
+        "department": "2"
+    },
+    {
+        "name": "Sondej Aldona mgr ",
+        "id": "10081",
+        "department": "2"
+    },
+    {
+        "name": "Spotkanie organizacyjne    ",
+        "id": "10670",
+        "department": "2"
+    },
+    {
+        "name": "Spotkanie organizacyjne   ",
+        "id": "10775",
+        "department": "2"
+    },
+    {
+        "name": "Spotkanie organizacyjne    ",
+        "id": "10669",
+        "department": "2"
+    },
+    {
+        "name": "Spotkanie organizacyjne    ",
+        "id": "10668",
+        "department": "2"
+    },
+    {
+        "name": "Stanis?awska Marta dr ",
+        "id": "10394",
+        "department": "2"
+    },
+    {
+        "name": "Stawarz ?ukasz mgr ",
+        "id": "188",
+        "department": "2"
+    },
+    {
+        "name": "Stefaniak Dariusz mgr ",
+        "id": "190",
+        "department": "2"
+    },
+    {
+        "name": "Szczepankowska J?zefa mgr ",
+        "id": "196",
+        "department": "2"
+    },
+    {
+        "name": "Szczepa?ski Andrzej dr ",
+        "id": "10168",
+        "department": "2"
+    },
+    {
+        "name": "Szkolenie    ",
+        "id": "10649",
+        "department": "2"
+    },
+    {
+        "name": "Szkolenie1     ",
+        "id": "10480",
+        "department": "2"
+    },
+    {
+        "name": "Szkolenie2    ",
+        "id": "10650",
+        "department": "2"
+    },
+    {
+        "name": "Szudrowicz-Garstka Ma?gorzata dr ",
+        "id": "317",
+        "department": "2"
+    },
+    {
+        "name": "Szulc-Kurpaska Ma?gorzata dr ",
+        "id": "10084",
+        "department": "2"
+    },
+    {
+        "name": "Szyd?owski Eugeniusz dr ",
+        "id": "259",
+        "department": "2"
+    },
+    {
+        "name": "Szylar Magdalena mgr ",
+        "id": "199",
+        "department": "2"
+    },
+    {
+        "name": "S?powicz-Buczko Katarzyna dr ",
+        "id": "176",
+        "department": "2"
+    },
+    {
+        "name": "Tracz Marcin mgr in?. ",
+        "id": "10663",
+        "department": "2"
+    },
+    {
+        "name": "Tuora ? Schwierskott Ewa dr hab. ",
+        "id": "10432",
+        "department": "2"
+    },
+    {
+        "name": "Ulewski Jerzy mgr ",
+        "id": "10431",
+        "department": "2"
+    },
+    {
+        "name": "WAKAT_J?zyk_1   ",
+        "id": "10779",
+        "department": "2"
+    },
+    {
+        "name": "WAKAT_J?zyk_2   ",
+        "id": "10529",
+        "department": "2"
+    },
+    {
+        "name": "WAKAT_J?zyk_3    ",
+        "id": "10778",
+        "department": "2"
+    },
+    {
+        "name": "Walczak  Przemys?aw mgr ",
+        "id": "10433",
+        "department": "2"
+    },
+    {
+        "name": "Wawrzyniak Anita mgr ",
+        "id": "210",
+        "department": "2"
+    },
+    {
+        "name": "Wierzbicki  Mateusz  mgr ",
+        "id": "10677",
+        "department": "2"
+    },
+    {
+        "name": "Wnukowska Bogumi?a dr hab. in?. ",
+        "id": "308",
+        "department": "2"
+    },
+    {
+        "name": "Wr?blewski Zbigniew mgr ",
+        "id": "220",
+        "department": "2"
+    },
+    {
+        "name": "Wysowska Aleksandra mgr ",
+        "id": "10510",
+        "department": "2"
+    },
+    {
+        "name": "W?dzina Dariusz dr ",
+        "id": "212",
+        "department": "2"
+    },
+    {
+        "name": "Zajchowska Sylwia mgr ",
+        "id": "223",
+        "department": "2"
+    },
+    {
+        "name": "j. polski - gr. ukrai?ska   ",
+        "id": "10816",
+        "department": "2"
+    },
+    {
+        "name": "?akomska Agnieszka mgr ",
+        "id": "118",
+        "department": "2"
+    },
+    {
+        "name": "?akomski Witold mgr ",
+        "id": "10712",
+        "department": "2"
+    },
+    {
+        "name": "?muda Marcin mgr in?. ",
+        "id": "10434",
+        "department": "2"
+    },
+    {
+        "name": "??ta?ska Joanna dr n. med. ",
+        "id": "325",
+        "department": "2"
+    },
+    {
+        "name": "Adamiak Jakub mgr ",
+        "id": "10076",
+        "department": "7"
+    },
+    {
+        "name": "Bernatek-Zagu?a Izabela dr ",
+        "id": "9",
+        "department": "7"
+    },
+    {
+        "name": "Bezdziecka Agnieszka mgr ",
+        "id": "10605",
+        "department": "7"
+    },
+    {
+        "name": "Bielawska Jolanta dr n. med. ",
+        "id": "322",
+        "department": "7"
+    },
+    {
+        "name": "Bigus-Ho?ubowicz Czes?awa dr n.med. ",
+        "id": "10653",
+        "department": "7"
+    },
+    {
+        "name": "Buchla Ma?gorzata dr ",
+        "id": "18",
+        "department": "7"
+    },
+    {
+        "name": "Bujnowska Ma?gorzata dr n. med. ",
+        "id": "330",
+        "department": "7"
+    },
+    {
+        "name": "B?aszczuk Jerzy dr hab. n. med. ",
+        "id": "10504",
+        "department": "7"
+    },
+    {
+        "name": "Cieciak Dorota mgr ",
+        "id": "10207",
+        "department": "7"
+    },
+    {
+        "name": "Cie?lik  Barbara dr ",
+        "id": "10652",
+        "department": "7"
+    },
+    {
+        "name": "Czapulak-Jab?o?ska Anna mgr ",
+        "id": "10415",
+        "department": "7"
+    },
+    {
+        "name": "Czepiel-Kloc Franciszka mgr ",
+        "id": "10194",
+        "department": "7"
+    },
+    {
+        "name": "Domi?ska-Werbel Dorota dr ",
+        "id": "35",
+        "department": "7"
+    },
+    {
+        "name": "Dorowski Szymon mgr ",
+        "id": "10790",
+        "department": "7"
+    },
+    {
+        "name": "Draczy?ska Ewa mgr ",
+        "id": "10505",
+        "department": "7"
+    },
+    {
+        "name": "Druszcz Adam dr n. med. ",
+        "id": "10797",
+        "department": "7"
+    },
+    {
+        "name": "Drzystek Wioletta dr ",
+        "id": "39",
+        "department": "7"
+    },
+    {
+        "name": "Durek Gra?yna prof. dr hab. n. med. ",
+        "id": "10121",
+        "department": "7"
+    },
+    {
+        "name": "Filipienko Anna mgr ",
+        "id": "10071",
+        "department": "7"
+    },
+    {
+        "name": "Florek Iwona mgr ",
+        "id": "10007",
+        "department": "7"
+    },
+    {
+        "name": "Gdula Arkadiusz mgr ",
+        "id": "10545",
+        "department": "7"
+    },
+    {
+        "name": "Gnitecka Renata dr in?. ",
+        "id": "49",
+        "department": "7"
+    },
+    {
+        "name": "Golicz Barbara mgr ",
+        "id": "10144",
+        "department": "7"
+    },
+    {
+        "name": "Goluch Zuzanna dr hab. ",
+        "id": "10791",
+        "department": "7"
+    },
+    {
+        "name": "Groszewska Ewa dr ",
+        "id": "10503",
+        "department": "7"
+    },
+    {
+        "name": "Gruba ?ukasz mgr ",
+        "id": "10781",
+        "department": "7"
+    },
+    {
+        "name": "G?ra-Pacho? Dorota mgr ",
+        "id": "10497",
+        "department": "7"
+    },
+    {
+        "name": "G?rska-Zaj?c J?zefa mgr in?. ",
+        "id": "50",
+        "department": "7"
+    },
+    {
+        "name": "Heimrath Jerzy dr hab. ",
+        "id": "10800",
+        "department": "7"
+    },
+    {
+        "name": "Hojniak Roman mgr in?. ",
+        "id": "61",
+        "department": "7"
+    },
+    {
+        "name": "Ho?owiak Renata mgr  ",
+        "id": "324",
+        "department": "7"
+    },
+    {
+        "name": "Hurej Wanda mgr ",
+        "id": "10181",
+        "department": "7"
+    },
+    {
+        "name": "Hurkacz Magdalena dr ",
+        "id": "10792",
+        "department": "7"
+    },
+    {
+        "name": "H?bscher Kornelia dr ",
+        "id": "62",
+        "department": "7"
+    },
+    {
+        "name": "Idczak Anna mgr ",
+        "id": "10795",
+        "department": "7"
+    },
+    {
+        "name": "Jaros Emilia mgr ",
+        "id": "10786",
+        "department": "7"
+    },
+    {
+        "name": "Jusiakowska - Piputa Ma?gorzata dr ",
+        "id": "10785",
+        "department": "7"
+    },
+    {
+        "name": "Kaczan Agnieszka mgr ",
+        "id": "10531",
+        "department": "7"
+    },
+    {
+        "name": "Kamieniecka Monika mgr ",
+        "id": "10340",
+        "department": "7"
+    },
+    {
+        "name": "Karli?ska Ewa mgr ",
+        "id": "10417",
+        "department": "7"
+    },
+    {
+        "name": "Klimczak Marcin mgr ",
+        "id": "10526",
+        "department": "7"
+    },
+    {
+        "name": "Komorowicz Halina mgr ",
+        "id": "10028",
+        "department": "7"
+    },
+    {
+        "name": "Konieczny Grzegorz dr ",
+        "id": "10318",
+        "department": "7"
+    },
+    {
+        "name": "Kowal-Orczykowska Anna dr ",
+        "id": "97",
+        "department": "7"
+    },
+    {
+        "name": "Kowalik Iwona mgr ",
+        "id": "10262",
+        "department": "7"
+    },
+    {
+        "name": "Ko?odziej Jerzy prof. dr hab. n. med. ",
+        "id": "10342",
+        "department": "7"
+    },
+    {
+        "name": "Ku?mi?ski Adam dr n. med. ",
+        "id": "10073",
+        "department": "7"
+    },
+    {
+        "name": "Kwiatkowski Artur dr n. med. ",
+        "id": "10796",
+        "department": "7"
+    },
+    {
+        "name": "Lambrinow Nikolaj lek. ",
+        "id": "10813",
+        "department": "7"
+    },
+    {
+        "name": "Lisowska Katarzyna dr ",
+        "id": "115",
+        "department": "7"
+    },
+    {
+        "name": "Lisowska Gabriela mgr ",
+        "id": "10435",
+        "department": "7"
+    },
+    {
+        "name": "Marchwat Daria mgr ",
+        "id": "10787",
+        "department": "7"
+    },
+    {
+        "name": "Ma?yszczak Krzysztof dr hab. n. med. ",
+        "id": "10021",
+        "department": "7"
+    },
+    {
+        "name": "Miko?ajek Edyta mgr ",
+        "id": "10145",
+        "department": "7"
+    },
+    {
+        "name": "Mi?osz Marzena mgr ",
+        "id": "10266",
+        "department": "7"
+    },
+    {
+        "name": "Muraszka Maria mgr ",
+        "id": "163",
+        "department": "7"
+    },
+    {
+        "name": "Myrna-Bekas Renata dr ",
+        "id": "139",
+        "department": "7"
+    },
+    {
+        "name": "Nowak Kamil mgr ",
+        "id": "10780",
+        "department": "7"
+    },
+    {
+        "name": "Olimpiada piel?gniarska    ",
+        "id": "10746",
+        "department": "7"
+    },
+    {
+        "name": "Omelan Lilia dr ",
+        "id": "143",
+        "department": "7"
+    },
+    {
+        "name": "Panaszek Bernard prof. dr hab. n. med. ",
+        "id": "10656",
+        "department": "7"
+    },
+    {
+        "name": "Pietkiewicz Jerzy prof. dr hab. in?. ",
+        "id": "147",
+        "department": "7"
+    },
+    {
+        "name": "Pisarski Ryszard prof.dr hab.in?. ",
+        "id": "149",
+        "department": "7"
+    },
+    {
+        "name": "Pobirchenko Natalia prof. dr hab. ",
+        "id": "10337",
+        "department": "7"
+    },
+    {
+        "name": "P?czkowska Anna mgr ",
+        "id": "10020",
+        "department": "7"
+    },
+    {
+        "name": "Radka Karolina lek. ",
+        "id": "10801",
+        "department": "7"
+    },
+    {
+        "name": "Reszko Ma?gorzata mgr ",
+        "id": "10269",
+        "department": "7"
+    },
+    {
+        "name": "Rewak Olga mgr ",
+        "id": "10789",
+        "department": "7"
+    },
+    {
+        "name": "Rezerwacja   ",
+        "id": "10177",
+        "department": "7"
+    },
+    {
+        "name": "Rogowski ?ukasz dr ",
+        "id": "10657",
+        "department": "7"
+    },
+    {
+        "name": "Rola Piotr dr n. med. ",
+        "id": "10783",
+        "department": "7"
+    },
+    {
+        "name": "Rzucid?o Jakub dr ",
+        "id": "10382",
+        "department": "7"
+    },
+    {
+        "name": "Sajnach Magdalena mgr ",
+        "id": "10708",
+        "department": "7"
+    },
+    {
+        "name": "Santorowska Anna mgr ",
+        "id": "10709",
+        "department": "7"
+    },
+    {
+        "name": "Sawicki Zygmunt dr ",
+        "id": "10599",
+        "department": "7"
+    },
+    {
+        "name": "Selera Izabela mgr ",
+        "id": "172",
+        "department": "7"
+    },
+    {
+        "name": "Selwat Karol dr ",
+        "id": "173",
+        "department": "7"
+    },
+    {
+        "name": "Sieja Marcin dr ",
+        "id": "178",
+        "department": "7"
+    },
+    {
+        "name": "Ska?a Katarzyna lek. ",
+        "id": "10793",
+        "department": "7"
+    },
+    {
+        "name": "Sobolak Monika dr ",
+        "id": "10799",
+        "department": "7"
+    },
+    {
+        "name": "Sobo? Marta mgr ",
+        "id": "10210",
+        "department": "7"
+    },
+    {
+        "name": "Sondej Aldona mgr ",
+        "id": "10081",
+        "department": "7"
+    },
+    {
+        "name": "Sondel Gra?yna dr ",
+        "id": "186",
+        "department": "7"
+    },
+    {
+        "name": "Spotkanie organizacyjne    ",
+        "id": "10670",
+        "department": "7"
+    },
+    {
+        "name": "Spotkanie organizacyjne    ",
+        "id": "10669",
+        "department": "7"
+    },
+    {
+        "name": "Spotkanie organizacyjne   ",
+        "id": "10776",
+        "department": "7"
+    },
+    {
+        "name": "Spotkanie organizacyjne    ",
+        "id": "10668",
+        "department": "7"
+    },
+    {
+        "name": "Stanaszek Monika dr ",
+        "id": "10798",
+        "department": "7"
+    },
+    {
+        "name": "Stawarz ?ukasz mgr ",
+        "id": "188",
+        "department": "7"
+    },
+    {
+        "name": "St?ycka Aneta mgr ",
+        "id": "10211",
+        "department": "7"
+    },
+    {
+        "name": "Szczepankowska J?zefa mgr ",
+        "id": "196",
+        "department": "7"
+    },
+    {
+        "name": "Szkolenie    ",
+        "id": "10649",
+        "department": "7"
+    },
+    {
+        "name": "Szoci?ska Agata mgr ",
+        "id": "10703",
+        "department": "7"
+    },
+    {
+        "name": "Szylar Magdalena mgr ",
+        "id": "199",
+        "department": "7"
+    },
+    {
+        "name": "S?upska-Kartaczowska Ma?gorzata mgr ",
+        "id": "10146",
+        "department": "7"
+    },
+    {
+        "name": "S?powicz-Buczko Katarzyna dr ",
+        "id": "176",
+        "department": "7"
+    },
+    {
+        "name": "Tracz Marcin mgr in?. ",
+        "id": "10663",
+        "department": "7"
+    },
+    {
+        "name": "Traczuk-Bernat Katarzyna mgr ",
+        "id": "10329",
+        "department": "7"
+    },
+    {
+        "name": "Trela Mariusz mgr ",
+        "id": "10309",
+        "department": "7"
+    },
+    {
+        "name": "Trochowska Renata mgr ",
+        "id": "10794",
+        "department": "7"
+    },
+    {
+        "name": "Turkiewicz Beata mgr ",
+        "id": "10715",
+        "department": "7"
+    },
+    {
+        "name": "Twarogowska-Wielesik Iwona dr in?. ",
+        "id": "10346",
+        "department": "7"
+    },
+    {
+        "name": "Urbanik Witold dr ",
+        "id": "204",
+        "department": "7"
+    },
+    {
+        "name": "WAKAT_J?zyk_1   ",
+        "id": "10779",
+        "department": "7"
+    },
+    {
+        "name": "WAKAT_J?zyk_2   ",
+        "id": "10529",
+        "department": "7"
+    },
+    {
+        "name": "WAKAT_J?zyk_3    ",
+        "id": "10778",
+        "department": "7"
+    },
+    {
+        "name": "Walczak-Chajec Ewa dr in?. ",
+        "id": "10001",
+        "department": "7"
+    },
+    {
+        "name": "Weso?owska Wioletta mgr ",
+        "id": "10788",
+        "department": "7"
+    },
+    {
+        "name": "Wierzbicka Monika dr ",
+        "id": "10321",
+        "department": "7"
+    },
+    {
+        "name": "Wierzbicki  Mateusz  mgr ",
+        "id": "10677",
+        "department": "7"
+    },
+    {
+        "name": "Witek Marzena mgr ",
+        "id": "10659",
+        "department": "7"
+    },
+    {
+        "name": "Wronecki Krzysztof dr hab. n. med. ",
+        "id": "10254",
+        "department": "7"
+    },
+    {
+        "name": "Wr?blewska Izabela dr hab. ",
+        "id": "10704",
+        "department": "7"
+    },
+    {
+        "name": "Wysowska Aleksandra mgr ",
+        "id": "10510",
+        "department": "7"
+    },
+    {
+        "name": "W?odarczak Adrian dr n. med. ",
+        "id": "10784",
+        "department": "7"
+    },
+    {
+        "name": "W?dzina Dariusz dr ",
+        "id": "212",
+        "department": "7"
+    },
+    {
+        "name": "Zab?otna Katarzyna mgr ",
+        "id": "10428",
+        "department": "7"
+    },
+    {
+        "name": "Zajdel Dorota mgr ",
+        "id": "10277",
+        "department": "7"
+    },
+    {
+        "name": "Zakrawacz Magdalena mgr ",
+        "id": "10352",
+        "department": "7"
+    },
+    {
+        "name": "Zawadzka Gra?yna mgr ",
+        "id": "10812",
+        "department": "7"
+    },
+    {
+        "name": "j. polski - gr. ukrai?ska   ",
+        "id": "10816",
+        "department": "7"
+    },
+    {
+        "name": "?abowicz Beata mgr ",
+        "id": "10043",
+        "department": "7"
+    },
+    {
+        "name": "?akomska Agnieszka mgr ",
+        "id": "118",
+        "department": "7"
+    },
+    {
+        "name": "?liwi?ska Katarzyna mgr ",
+        "id": "10228",
+        "department": "7"
+    },
+    {
+        "name": "?lusarczyk Kamila mgr in?. ",
+        "id": "10320",
+        "department": "7"
+    },
+    {
+        "name": "?muda Marcin mgr in?. ",
+        "id": "10434",
+        "department": "7"
+    },
+    {
+        "name": "??ta?ska Joanna dr n. med. ",
+        "id": "325",
+        "department": "7"
+    },
+    {
+        "name": "B?aszczyk-Szabat Agnieszka dr ",
+        "id": "312",
+        "department": "10"
+    },
+    {
+        "name": "Czarnecka Joanna mgr ",
+        "id": "29",
+        "department": "10"
+    },
+    {
+        "name": "Domi?ska-Werbel Dorota dr ",
+        "id": "35",
+        "department": "10"
+    },
+    {
+        "name": "D?browa Pawe? dr in?. ",
+        "id": "10360",
+        "department": "10"
+    },
+    {
+        "name": "Fry?lewicz Zbigniew dr in?. ",
+        "id": "46",
+        "department": "10"
+    },
+    {
+        "name": "H?bscher Kornelia dr ",
+        "id": "62",
+        "department": "10"
+    },
+    {
+        "name": "Kenc Joanna dr ",
+        "id": "83",
+        "department": "10"
+    },
+    {
+        "name": "Klosow Aleksander dr ",
+        "id": "85",
+        "department": "10"
+    },
+    {
+        "name": "Kobes Pawe? dr ",
+        "id": "86",
+        "department": "10"
+    },
+    {
+        "name": "Kos Agnieszka dr ",
+        "id": "10282",
+        "department": "10"
+    },
+    {
+        "name": "Kowal-Orczykowska Anna dr ",
+        "id": "97",
+        "department": "10"
+    },
+    {
+        "name": "Kubik Rafa? dr ",
+        "id": "10392",
+        "department": "10"
+    },
+    {
+        "name": "Lewandowska-Bratek Justyna dr ",
+        "id": "10665",
+        "department": "10"
+    },
+    {
+        "name": "Macuga Pawe? mgr ",
+        "id": "122",
+        "department": "10"
+    },
+    {
+        "name": "Nadybski Piotr dr in?. ",
+        "id": "299",
+        "department": "10"
+    },
+    {
+        "name": "Omelan Lilia dr ",
+        "id": "143",
+        "department": "10"
+    },
+    {
+        "name": "Radkowska Jolanta dr ",
+        "id": "158",
+        "department": "10"
+    },
+    {
+        "name": "Rewak Krzysztof mgr in?. ",
+        "id": "10377",
+        "department": "10"
+    },
+    {
+        "name": "Rezerwacja   ",
+        "id": "272",
+        "department": "10"
+    },
+    {
+        "name": "R?bowski Ryszard dr in?. ",
+        "id": "161",
+        "department": "10"
+    },
+    {
+        "name": "Selwat Karol dr ",
+        "id": "173",
+        "department": "10"
+    },
+    {
+        "name": "Siudak Przemys?aw dr ",
+        "id": "182",
+        "department": "10"
+    },
+    {
+        "name": "Stechnij Tomasz dr in?. ",
+        "id": "10185",
+        "department": "10"
+    },
+    {
+        "name": "Szkic-Czech Ewa dr ",
+        "id": "10662",
+        "department": "10"
+    },
+    {
+        "name": "Szulc-Kurpaska Ma?gorzata dr ",
+        "id": "10084",
+        "department": "10"
+    },
+    {
+        "name": "Urbanik Witold dr ",
+        "id": "204",
+        "department": "10"
+    },
+    {
+        "name": "Zurek Arkadiusz mgr ",
+        "id": "10612",
+        "department": "10"
+    },
+    {
+        "name": "Zurek Anna mgr ",
+        "id": "10667",
+        "department": "10"
+    },
+    {
+        "name": "?akomska Agnieszka mgr ",
+        "id": "118",
+        "department": "10"
+    },
+    {
+        "name": "?lusarczyk Kamila mgr in?. ",
+        "id": "10320",
+        "department": "10"
+    },
+    {
+        "name": "Fiszer Kamila mgr ",
+        "id": "10727",
+        "department": "11"
+    },
+    {
+        "name": "Myrna-Bekas Renata dr ",
+        "id": "139",
+        "department": "11"
+    },
+    {
+        "name": "Sondel Gra?yna dr ",
+        "id": "186",
+        "department": "11"
+    },
+    {
+        "name": "Stawarz ?ukasz mgr ",
+        "id": "188",
+        "department": "11"
+    },
+    {
+        "name": "Stefaniak Dariusz mgr ",
+        "id": "190",
+        "department": "11"
+    },
+    {
+        "name": "Wierzbicki  Mateusz  mgr ",
+        "id": "10677",
+        "department": "11"
+    }
+]

@@ -21,23 +21,31 @@ class RoomRepository extends ServiceEntityRepository
         parent::__construct($registry, Room::class);
     }
 
-    public function save(Room $entity, bool $flush = false): void
+    public function save(Room $entity): void
     {
+
         $this->getEntityManager()->persist($entity);
-
-        if ($flush) {
-            $this->getEntityManager()->flush();
-        }
     }
 
-    public function remove(Room $entity, bool $flush = false): void
+    public function flush() {
+        $this->getEntityManager()->flush();
+    }
+
+    public function deleteAll()
     {
-        $this->getEntityManager()->remove($entity);
-
-        if ($flush) {
-            $this->getEntityManager()->flush();
-        }
+        $this->createQueryBuilder('del')->delete()->where('1=1')->getQuery()->execute();
     }
+
+    public function findOneByName($value): ?Room
+    {
+         return $this->createQueryBuilder('room')
+                    ->andWhere('room.name LIKE :val')
+                    ->setParameter('val', $value)
+                    ->orWhere('room.locationName LIKE :location')
+                    ->setParameter('location', $value)
+                    ->getQuery()->getOneOrNullResult();
+    }
+
 
 //    /**
 //     * @return Room[] Returns an array of Room objects

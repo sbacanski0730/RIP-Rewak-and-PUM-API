@@ -13,28 +13,24 @@ use Doctrine\Common\Collections\Collection;
 class Group
 {
     #[ORM\Id]
-    #[ORM\GeneratedValue]
     #[ORM\Column]
-    private ?int $id = null;
 
-    private ?string $name = null;
+    private ?string $id = "";
 
     #[ORM\OneToMany(targetEntity: Event::class, mappedBy: 'group')]
     private $events;
+
+
+    #[ORM\ManyToOne(targetEntity: Course::class, inversedBy: 'groups')]
+    private $course;
 
     public function __construct() {
         $this->events = new ArrayCollection();
     }
 
-
-    public function getId(): ?int
+    public function getId(): ?string
     {
         return $this->id;
-    }
-
-    public function getName(): ?string
-    {
-        return $this->name;
     }
 
     public function getEvents(): Collection
@@ -42,4 +38,22 @@ class Group
         return $this->events;
     }
 
+    public function getCourse(): Course
+    {
+        return $this->course;
+    }
+
+    public function setId($id): self
+    {
+        $this->id = $id;
+
+        return $this;
+    }
+
+    public function setCourse($course): self
+    {
+        $this->course = $course;
+
+        return $this;
+    }
 }

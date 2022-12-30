@@ -23,6 +23,20 @@ class DepartmentRepository extends ServiceEntityRepository
         parent::__construct($registry, Department::class);
     }
 
+    public function save(Department $entity): void
+    {
+
+        $this->getEntityManager()->persist($entity);
+    }
+
+    public function flush() {
+        $this->getEntityManager()->flush();
+    }
+
+    public function deleteAll() {
+        $this->createQueryBuilder('del')->delete()->where('1=1')->getQuery()->execute();
+    }
+
     // public function find($id, $lockMode = null, $lockVersion = null)
     // {
     //     return 222;

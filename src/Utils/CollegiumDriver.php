@@ -39,4 +39,50 @@ class CollegiumDriver implements Driver {
     {
         return new CollegiumExceptionConverter();
     }
+
+    public function getDepartments()
+    {
+        $body = $this->getBody('http://www.plan.pwsz.legnica.edu.pl/schedule_view.php?site=show_nauczyciel.php');
+        $pattern = '/show_kierunek.php&amp;id=(?<numer_wydzialu>.*?)">(?<nazwa_wydzialu>.*?)</m';
+
+        preg_match_all($pattern, $body, $matches);
+        $results['name'] = $matches['nazwa_wydzialu'];
+        $results['number'] = $matches['numer_wydzialu'];
+
+
+        $objects = [];
+
+
+        $length = count($results['name']);
+
+        for ($i = 0; $i < $length; $i++) {
+            $objects[] = (object) [
+                'id' => $results['number'][$i],
+                'name' => $results['name'][$i]
+            ];
+        }
+
+        return $objects;
+    }
+
+    public function getDepartmentsCount()
+    {
+        $rows = $this->getDepartments();
+
+        return (object) ['sclr_0' => count($rows)];
+    }
+
+    private function getBody($url) {
+        $this->crawler = $this->client->request('GET', $url);
+        $output = $this->crawler->filter('body');
+        $html = $output->outerHtml();
+
+
+        $start = stripos($html, '<body>');
+        $end = stripos($html, '</body>', $offset = $start);
+        $length = $end - $start;
+        $htmlSection = substr($html, $start, $length);
+ 
+        return $htmlSection;
+    }
 }

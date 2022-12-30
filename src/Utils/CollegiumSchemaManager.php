@@ -8,7 +8,6 @@ use Doctrine\DBAL\Types\StringType;
 class CollegiumSchemaManager extends AbstractSchemaManager
 {
 	public function _getPortableTableColumnDefinition($tableColumn) {
-		dd($tableColumn);
 		return new Column('a', new StringType , []);
 	}
 }

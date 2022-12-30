@@ -23,11 +23,56 @@ class WorkerRepository extends ServiceEntityRepository
         parent::__construct($registry, Worker::class);
     }
 
-    public function findAll(): array 
+    public function save(Worker $entity): void
     {
-        return [1,2,3];
+
+        $this->getEntityManager()->persist($entity);
     }
 
+    public function flush() {
+        $this->getEntityManager()->flush();
+    }
+
+    public function deleteAll() {
+        $this->createQueryBuilder('del')->delete()->where('1=1')->getQuery()->execute();
+    }
+
+   public function findByName($value): ?Worker
+   {
+        $realName = str_replace("prof.", "", $value);
+        $realName = str_replace("mgr.", "", $realName);
+        $realName = str_replace(" mgr", "", $realName);
+        $realName = str_replace("mgr ", "", $realName);
+        $realName = str_replace("mgr inż.", "", $realName);
+        $realName = str_replace("inż.", "", $realName);
+        $realName = str_replace("dr n. med.", "", $realName);
+        $realName = str_replace("dr hab. n. med.", "", $realName);
+        $realName = str_replace("dr hab.", "", $realName);
+        $realName = str_replace("dr.", "", $realName);
+        $realName = str_replace("dr ", "", $realName);
+        $realName = str_replace("lek.", "", $realName);
+        $realName = trim($realName);
+
+
+        $realName = str_replace("Małgorzata Jusiakowska - Piputa", "Jusiakowska - Piputa Małgorzata", $realName);
+
+        $names = explode(" ", $realName);
+
+        $query = $this->createQueryBuilder('w')
+        ->andWhere('w.name LIKE :val')
+        ->setParameter('val', '%'.$realName.'%');
+
+        // echo $realName . "\r\n";
+        // echo $names[1].' '.$names[0]."\r\n";
+
+        if (count($names) > 1) {
+            $query = $query->orWhere('w.name LIKE :val_reversed')
+                ->setParameter('val_reversed', '%' . $names[1] . ' ' . $names[0] . '%');
+        }
+
+       return $query->getQuery()
+        ->setMaxResults(1)->getOneOrNullResult();
+   }
 
 //    /**
 //     * @return Worker[] Returns an array of Worker objects
