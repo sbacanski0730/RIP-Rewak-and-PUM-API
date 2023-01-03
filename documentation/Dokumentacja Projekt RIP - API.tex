@@ -1,0 +1,154 @@
+\documentclass{article}
+\usepackage{polski}
+\usepackage[utf8]{inputenc}
+\usepackage{hyperref}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=cyan,
+    pdfpagemode=FullScreen,
+    }
+
+\title{Projekt\textunderscore RIP - API}
+\author{
+Jakub Engielski\\
+Jan Kwiatkowski \\
+}
+
+
+\date{Styczeń 2023}
+
+\usepackage{natbib}
+\usepackage{graphicx}
+
+\begin{document}
+
+\maketitle
+
+\section{Opis funkcjonalny systemu}
+Celem "Projektu\textunderscore RIP - API" było utworzenie aplikacji do pobrania danych z planu uczelni Collegium Witelona. Wraz z tym dochodzi także część formatująca, przystosowująca pobrane dane w ten sposób aby aplikacja web oraz aplikacja mobilna byłby w stanie bez problemu się nimi obsługiwać.
+\\Api będzie zgodnie z ustalonym harmonogramem, np. raz dziennie pobierało dane z planu uczelni. Wykonywało swoje funkcje, oraz wystawiało już sformatowane i posegregowane dane przy pomocy rest api.
+\\Endpointy wykonane są zgodnie z standardami swaggera. 
+
+
+\section{Streszczenie opisu technologicznego}
+Korzystamy z framework'u Symfony 6.1 wspierającego język PHP, dzięki któremy jesteśmy w stanie postawić ten projekt bez potrzeby pisania wielu rzeczy od nowa. Wybraliśmy Symfony gdyż jesteśmy z nim najbardziej zapoznani. \\
+Docker umożliwia nam łatwe pakowanie, dostarczanie oraz uruchamianie aplikacji w formie lekkiego, przenośnego i samowystarczalnego kontenera. Co pozwala nam to uruchomić szybko i praktycznie wszędzie.
+\\
+Api Platform jest paczką, która pozwala na wygodne i szybkie wystawienie rest api. Bez tego prace zostały by wydłużone bez żadnego dobrego powodu. 
+\\
+Goutte jest paczką pozwalającą nam na postawienie samego scrapera. Jest to niezbędna część tego projektu, bez niej postawienie scrapera w php byłoby o wiele bardziej obciażające jeśli chodzi o moc obliczeniową (Symfony Panther) albo wymagało by olbrzymiej pracy na około aby obejść prostotę systemu (Guzzle)
+\\
+Doctrine jest paczką pozwalającą nam w wygodnu sposób pracować nad entity. Dzięki czemu jesteśmy w stanie wyprowadzić poprawne dane w formie api.
+\\
+Bazą danych jaka jest wykorzystawna jest Postgres. Jest to zaawansowany system do zarządania relacyjnymi bazami danych, do tego jest to projekt open source.
+
+\section{Instrukcję lokalnego i zdalnego uruchomienia systemu}
+\subsection{Postawienie systemu lokalnie}
+Wymagane oprogramowanie:\\
+PHPStorm lub dowolny inny IDE\\
+Docker Desktop\\
+Terminal Windows (nie jest potrzebny osobno jeśli jest wbudowany w IDE jak w PHPStorm)\\
+Github Desktop – aby móc wprowadzać zmiany, bądź pobierać aktualizacje jeśli są potrzebne. (nie jest wymagany  jeśli jest wbudowany w IDE, bądź jeśli ktoś posiada zainstalowany pakiet GIT do użytku poprzez terminal)\\\\
+Jak postawić środowisko testowe na dockerze?\\
+\href{https://docs.docker.com/docker-for-windows/}{Instrukcja dla Windowsa}\\
+\href{https://docs.docker.com/compose/install/}{Instrukcja dla Linuxa}\\\\
+\textbf{Jeżeli wszystko zainstalowałeś, przejdź do instrukcji poniżej:}
+\begin{enumerate}
+    \item Pobranie projektu z repozytorium oraz przejście do jego folderu: \\\\
+    \emph{ git clone https://github.com/sbacanski0730/RIP-Rewak-and-PUM-API.git} \\
+   			 \emph{ cd RIP-Rewak-and-PUM-API} \\
+    \item Konfiguracja pliku .env\\\\
+    \emph{cp .env .env.local} \\
+    \item Uruchomienie kontenerów dockerowych:\\\\
+    \emph{docker-compose up -d --build}\\
+    \item Pobranie zależności Composer:\\\\
+    \emph{docker-compose exec php composer install}\\
+ 			 \item Pobranie zależności npm:\\\\
+ 		   \emph{docker-compose exec php npm install}\\
+ 			 \item Budowanie Assetów:\\\\
+ 		   \emph{docker-compose exec php npm run dev}\\
+    \end{enumerate}
+\textbf{Migracje:}\\
+\begin{enumerate}
+\item Utworzenie migracji: \\\\
+ \emph{php bin/console doctrine:migrations:diff} \\
+ \emph{php bin/console doctrine:migrations:migrate} \\\\
+  \end{enumerate}
+ \textbf{Bez migracji:}\\
+ \begin{enumerate}
+\item Utworzenie schematu bazy danych: \\\\
+ \emph{php bin/console doctrine:schema:update --force} \\
+ \item Załadowanie zdefiniowanych wczesniej danych do bazy danych: \\\\
+ \emph{php bin/console doctrine:fixtures:load} \\
+ \end{enumerate}
+
+
+
+
+
+
+\textbf{Usługi:}
+    \begin{itemize}
+        \item api https://localhost:443/api
+        \item postgres localhost:5432 \\\\
+    \end{itemize}
+    
+    
+   
+\textbf{Przydatne Komendy:}\\
+\begin{enumerate}
+\item Docker - uruchomienie kontenerów: \\\\
+ \emph{docker-compose up -d} \\
+ \item Docker - zatrzymanie kontenerów: \\\\
+ \emph{docker-compose stop} \\
+ \item Docker - zatrzymanie i usunięcie kontenerów \\\\
+ \emph{docker-compose down} \\
+  \end{enumerate}
+    
+
+\subsection{Postawienie systemu zdalnie}
+To Edit:
+W naszym wypadku użyliśmy programu PuTTY, aby podłączyć się z serwerem Debianowym. Może do tego posłużyć dowolny klient SSH.\\
+Po tym musieliśmy zainstalować następujące pakiety:
+\begin{itemize}
+\item nginx 1.18
+\item PHP 8.0.14
+\item mariadb 10.5.12
+\item phpMyAdmin 5.0.4
+\item Node.js 16.13.2
+\end{itemize}
+Pliki naszej strony są automatycznie pobierane z repozytorium git.
+\begin{enumerate}
+\item Pobieranie zależności Composer'a: \\\\
+ \emph{composer install
+} \\
+ \item Pobranie zależności npm:\\\\
+ \emph{npm install
+} \\
+ \item Budowanie Assetów: \\\\
+ \emph{yarn build
+} \\
+ \item Utworzenie schematu bazy danych: \\\\
+ \emph{php bin/console doctrine:schema:update --force
+} \\
+ \item Załadowanie zdefiniowanych wczesniej danych do bazy danych: \\\\
+ \emph{php bin/console doctrine:fixtures:load
+} \\
+
+  \end{enumerate}
+
+
+\section{Dokumentacja}
+Link do pełnej dokumentacji na naszym repozytorium: 
+api: \url{https://github.com/sbacanski0730/RIP-Rewak-and-PUM-API/tree/main/documentation}\\\\
+web:
+mobile:
+
+\section{Wnioski projektowe}
+
+
+
+\end{document}
