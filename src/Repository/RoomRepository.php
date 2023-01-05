@@ -45,6 +45,7 @@ class RoomRepository extends ServiceEntityRepository
                     ->setParameter('location', $value)
                     ->getQuery()->getOneOrNullResult();
     }
+
     public function findByName($value)
     {
          return $this->createQueryBuilder('room')
@@ -54,6 +55,7 @@ class RoomRepository extends ServiceEntityRepository
                     ->setParameter('location', $value)
                     ->getQuery()->execute();
     }
+
    
 
 

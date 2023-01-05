@@ -266,13 +266,6 @@ class FetchData extends Command
             // echo 'room to find: '.$event->room ."\r\n";
             $room = $this->roomRepository->findOneByName($event->room);
 
-
-
-        
-
-
-
-
             if (is_null($worker)) {
                 //todo nie pokazywac echo jak nazwa zaczyna sie od Legenda
                 // $io->text(json_encode($event, JSON_PRETTY_PRINT));
