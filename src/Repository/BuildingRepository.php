@@ -34,4 +34,8 @@ class BuildingRepository extends ServiceEntityRepository
     public function deleteAll() {
         $this->createQueryBuilder('del')->delete()->where('1=1')->getQuery()->execute();
     }
+    public function findAll()
+    {
+        return $this->findBy(array(), array('id' => 'ASC'));
+    }
 }

@@ -45,13 +45,13 @@ class Event
     #[ORM\Column(length: 255)]
     private ?string $subject = null;
 
-    #[ORM\ManyToOne(targetEntity: Room::class, inversedBy: 'events')]
+    #[ORM\ManyToOne(targetEntity: Room::class, inversedBy: 'events',fetch: "EAGER")]
     private $room;
 
-    #[ORM\ManyToOne(targetEntity: Worker::class, inversedBy: 'events')]
+    #[ORM\ManyToOne(targetEntity: Worker::class, inversedBy: 'events', fetch: "EAGER")]
     private $worker;
 
-    #[ORM\ManyToOne(targetEntity: Group::class, inversedBy: 'events')]
+    #[ORM\ManyToOne(targetEntity: Group::class, inversedBy: 'events' )]
     private $group;
 
     public function getId(): ?int
@@ -117,7 +117,7 @@ class Event
         $this->room = $room;
         return $this;
     }
-    
+
     public function setWorker($worker): self
     {
         $this->worker = $worker;

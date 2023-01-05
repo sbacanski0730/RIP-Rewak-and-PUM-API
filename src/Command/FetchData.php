@@ -56,9 +56,9 @@ class FetchData extends Command
         $this->courseRepository = $courseRepository;
         $this->departmentRepository = $departmentRepository;
         $this->eventRepository = $eventRepository;
-        $this->groupRepository = $groupRepository;
         $this->roomRepository = $roomRepository;
         $this->workerRepository = $workerRepository;
+        $this->groupRepository = $groupRepository;
 
         parent::__construct();
     }
@@ -100,6 +100,16 @@ class FetchData extends Command
         $customMeetings = 0;
 
         $io->text(json_encode($_workers[0], JSON_PRETTY_PRINT));
+
+        $otherWorker = new Worker();
+
+        $otherWorker->setId(9999)->setName("Różni");
+        $this->workerRepository->save($otherWorker);
+
+        foreach ($departments as $department) {
+            $departmentEntities[$department->id]->addWorker($otherWorker);
+            $this->departmentRepository->save($departmentEntities[$department->id]);
+        }
 
         foreach ($_workers as $worker) {
             if (!array_key_exists($worker->id, $workers)) {
@@ -202,7 +212,8 @@ class FetchData extends Command
 
             $entity
                 ->setId($course->id)
-                ->setName($course->name);
+                ->setName($course->name)
+                ->setDepartment($departmentEntities[$course->departmentId]);
 
             $departmentEntities[$course->departmentId]->addCourse($entity);
             $this->courseRepository->save($entity);
@@ -217,7 +228,15 @@ class FetchData extends Command
         $events = [];
         $counter = 0;
 
-        foreach(array_slice($courseEntities, 0, 4) as $course){
+        // todo zmieniac zakres slice zeby namierzyc na ktorym sie sypie
+        // foreach(array_slice($courseEntities, 29, 1) as $course){
+        // foreach(array_slice($courseEntities, 42, 1) as $course){
+        // foreach(array_slice($courseEntities, 44, 1) as $course){
+        // foreach(array_slice($courseEntities, 50, 1) as $course){
+        // foreach(array_slice($courseEntities, 54, 2) as $course){
+        // foreach(array_slice($courseEntities, 77, 1) as $course){
+        // foreach(array_slice($courseEntities, 80, 3) as $course){
+            foreach(array_slice($courseEntities, 0, 29) as $course){
             $io->text('Fetching: '.$course->getName().' ('.++$counter.' of '.count($courseEntities).').');
 
             $courseEvents = $this->fetchSchedule($course->getId());
@@ -234,6 +253,7 @@ class FetchData extends Command
 
         $onlineRoomIdIdx = 4000;
 
+
         foreach ($events as $event) {
             $entity = new Event();
             preg_match('/.*\s(?<startDay>[\d\.]+)$/', $event->date, $matches);
@@ -242,13 +262,20 @@ class FetchData extends Command
             // echo 'worker to find: '.$event->lecturer ."\r\n";
             $worker = $this->workerRepository->findByName($event->lecturer);
 
-            
             // echo 'room to find: '.$event->room ."\r\n";
             $room = $this->roomRepository->findOneByName($event->room);
 
             if (is_null($worker)) {
-                $io->text(json_encode($event, JSON_PRETTY_PRINT));
-                echo 'unable to find: '.$event->lecturer . "\r\n";
+                //todo nie pokazywac echo jak nazwa zaczyna sie od Legenda
+                // $io->text(json_encode($event, JSON_PRETTY_PRINT));
+                if ($event->lecturer != 'Legenda1'){
+                    if ($event->lecturer != 'Legenda2'){
+                        if ($event->lecturer != 'Legenda3'){
+                            echo 'unable to find: '.$event->lecturer . "\r\n";
+                            }
+                        }
+                }
+                $worker = $otherWorker;
             }
 
             if (is_null($room)) {
@@ -280,6 +307,9 @@ class FetchData extends Command
                 $groups[$event->group] = $groupEntity;
             }
 
+            $worker->addEvent($entity);
+            $this->workerRepository->save($worker);
+
             $entity
                 ->setSubject($event->subject)
                 ->setGroup($groups[$event->group])
@@ -302,13 +332,15 @@ class FetchData extends Command
 
     private function clearDatabase()
     {
-        $this->departmentRepository->deleteAll();
         $this->eventRepository->deleteAll();
+        $this->groupRepository->deleteAll();
+        
+        $this->courseRepository->deleteAll();
+
+        $this->departmentRepository->deleteAll();
         $this->workerRepository->deleteAll();
         $this->roomRepository->deleteAll();
         $this->buildingRepository->deleteAll();
-        $this->groupRepository->deleteAll();
-        $this->courseRepository->deleteAll();
     }
 
     private function flushDatabase()
@@ -386,7 +418,6 @@ class FetchData extends Command
                 'department' => $results['wydzial_pracownik'][$i]
             ];
         }
-
         return $objects;
     }
 

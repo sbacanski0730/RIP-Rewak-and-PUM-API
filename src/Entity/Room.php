@@ -40,7 +40,7 @@ class Room
     #[ORM\ManyToOne(targetEntity: Building::class, inversedBy: 'rooms')]
     private $building;
 
-    #[ORM\OneToMany(targetEntity: Event::class, mappedBy: 'room')]
+    #[ORM\OneToMany(targetEntity: Event::class, mappedBy: 'room', fetch: "EAGER")]
     private $events;
 
     public function __construct() {

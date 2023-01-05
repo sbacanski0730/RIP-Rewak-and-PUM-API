@@ -32,6 +32,10 @@ class Course
     #[ORM\OneToMany(targetEntity: Group::class, mappedBy: 'course')]
     private $groups;
 
+    #[Groups('write')]
+    #[ORM\ManyToOne(targetEntity: Department::class, inversedBy: 'courses')]
+    private $department;
+
     public function __construct() {
         $this->groups = new ArrayCollection();
     }
@@ -45,6 +49,22 @@ class Course
     public function getName(): ?string
     {
         return $this->name;
+    }
+
+    public function getDepartment(): ?Department
+    {
+        return $this->department;
+    }
+
+    public function getGroups()
+    {
+        return $this->groups;
+    }
+    public function setDepartment($department): self
+    {
+        $this->department = $department;
+
+        return $this;
     }
 
     public function setId($id): self

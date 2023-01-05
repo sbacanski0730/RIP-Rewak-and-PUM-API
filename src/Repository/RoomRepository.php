@@ -39,12 +39,13 @@ class RoomRepository extends ServiceEntityRepository
     public function findOneByName($value): ?Room
     {
          return $this->createQueryBuilder('room')
-                    ->andWhere('room.name LIKE :val')
+                    ->where('room.name LIKE :val')
                     ->setParameter('val', $value)
                     ->orWhere('room.locationName LIKE :location')
                     ->setParameter('location', $value)
                     ->getQuery()->getOneOrNullResult();
     }
+   
 
 
 //    /**

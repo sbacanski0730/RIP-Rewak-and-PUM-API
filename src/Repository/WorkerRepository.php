@@ -46,6 +46,7 @@ class WorkerRepository extends ServiceEntityRepository
         $realName = str_replace("mgr inż.", "", $realName);
         $realName = str_replace("inż.", "", $realName);
         $realName = str_replace("dr n. med.", "", $realName);
+        $realName = str_replace("dr n.med.", "", $realName);
         $realName = str_replace("dr hab. n. med.", "", $realName);
         $realName = str_replace("dr hab.", "", $realName);
         $realName = str_replace("dr.", "", $realName);
@@ -54,6 +55,8 @@ class WorkerRepository extends ServiceEntityRepository
         $realName = trim($realName);
 
 
+        $realName = str_replace("Ewa Tuora ÔÇô Schwierskott", "Tuora - Schwierskott Ewa", $realName);
+        $realName = str_replace("Czes┼éawa Bigus-Ho┼éubowicz", "Bigus-Hołubowicz Czesława", $realName);
         $realName = str_replace("Małgorzata Jusiakowska - Piputa", "Jusiakowska - Piputa Małgorzata", $realName);
 
         $names = explode(" ", $realName);
@@ -72,6 +75,15 @@ class WorkerRepository extends ServiceEntityRepository
 
        return $query->getQuery()
         ->setMaxResults(1)->getOneOrNullResult();
+   }
+   public function findByDepartmentName(string $name): array
+   {
+       $qb = $this->createQueryBuilder('w')
+           ->andWhere('d.name = :name')
+           ->setParameter('name', $name)
+           ->getQuery();
+
+       return $qb->execute();
    }
 
 //    /**

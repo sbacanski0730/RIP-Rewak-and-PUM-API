@@ -24,13 +24,13 @@ class Department
     #[ORM\Column]
     private ?int $id = null;
 
-    #[ORM\ManyToMany(targetEntity: Worker::class)]
+    #[ORM\ManyToMany(targetEntity: Worker::class, fetch: "EAGER")]
     private $workers;
 
     #[ORM\OneToMany(targetEntity: Event::class, mappedBy: 'department')]
     private $events;
 
-    #[ORM\OneToMany(targetEntity: Course::class, mappedBy: 'department')]
+    #[ORM\OneToMany(targetEntity: Course::class, mappedBy: 'department', fetch: "EAGER")]
     private $courses;
 
 
@@ -55,6 +55,10 @@ class Department
     public function getWorkers(): Collection
     {
         return $this->workers;
+    }
+    public function getCourses(): Collection
+    {
+        return $this->courses;
     }
     public function setId($id): self
     {

@@ -36,29 +36,13 @@ class DepartmentRepository extends ServiceEntityRepository
     public function deleteAll() {
         $this->createQueryBuilder('del')->delete()->where('1=1')->getQuery()->execute();
     }
+    public function findAll()
+    {
+        return $this->findBy(array(), array('id' => 'ASC'));
+    }
 
-    // public function find($id, $lockMode = null, $lockVersion = null)
-    // {
-    //     return 222;
-    // }
-
-    // public function findAll()
-    // {
-    //     return 222;
-    // }
-
-    // public function findOneBy(array $criteria, ?array $orderBy = null)
-    // {
-    //     return 222;
-    // }
-
-    // public function findBy(array $criteria, ?array $orderBy = null, $limit = null, $offset = null)
-    // {
-    //     return 222;
-    // }
-
-    // public function getClassName()
-    // {
-    //     return 222;
-    // }
+    public function findOneByName($name)
+    {
+        return $this->findOneBy(['name' => $name]);
+    }
 }

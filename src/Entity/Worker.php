@@ -38,7 +38,7 @@ class Worker
     private $departments;
 
     #[ApiProperty]
-    #[ORM\OneToMany(targetEntity: Event::class, mappedBy: 'worker')]
+    #[ORM\OneToMany(targetEntity: Event::class, mappedBy: 'worker', fetch: "EAGER")]
     private $events;
 
     public function __construct() {
@@ -82,6 +82,13 @@ class Worker
     public function getEvents(): Collection
     {
         return $this->events;
+    }
+    public function addEvent($event)
+    {
+        if (!$this->events->contains($event)) {
+            $this->events[] = $event;
+        }
+        return $this;
     }
 
 }
