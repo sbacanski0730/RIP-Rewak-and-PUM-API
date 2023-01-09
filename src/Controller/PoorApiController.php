@@ -31,6 +31,7 @@ class PoorApiController extends AbstractController
         $this->workerRepository = $workerRepository;
         $this->buildingRepository = $buildingRepository;
         $this->roomRepository = $roomRepository;
+        \ini_set('memory_limit', '840M');
     }
 
     #[Route('/workers-group', name: 'workersGroup')]
@@ -152,7 +153,7 @@ class PoorApiController extends AbstractController
     }
 
     #[Route('/courses/{nameDepartment}/{nameCourse}', name: 'eventByCourseInDepartment')]
-    function eventByCourseInDepartmentt(string $nameDepartment, string $nameCourse)
+    function eventByCourseInDepartment(string $nameDepartment, string $nameCourse)
     {
         $eventMap = [];
         $department = $this->departmentRepository->findOneByName($nameDepartment);
@@ -161,7 +162,7 @@ class PoorApiController extends AbstractController
             if ($course->getName() == $nameCourse) {
                 foreach($course->getGroups() as $group){
                     foreach ($group->getEvents() as $event) {
-                        $eventeMap[] = (object) [
+                        $eventMap[] = (object) [
                             "timeStart" => $event->getStartTime(),
                             "timeEnd" => $event->getEndTime(),
                             "room" => $event->getRoom()->getName(),
@@ -175,7 +176,7 @@ class PoorApiController extends AbstractController
             }
         }
         
-        return new JsonResponse($eventeMap);
+        return new JsonResponse($eventMap);
     }
 
 }

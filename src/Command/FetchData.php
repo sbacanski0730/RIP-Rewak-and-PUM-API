@@ -65,7 +65,7 @@ class FetchData extends Command
 
 	protected function execute(InputInterface $input, OutputInterface $output): int
     {
-        \ini_set('memory_limit', '512M');
+        \ini_set('memory_limit', '840M');
 
         $io = new SymfonyStyle($input, $output);
 
@@ -235,9 +235,9 @@ class FetchData extends Command
         // foreach(array_slice($courseEntities, 50, 1) as $course){ //"n2ZIP"
         // foreach(array_slice($courseEntities, 54, 2) as $course){ //"s1ZIP"  "s2ZIP"
         // foreach(array_slice($courseEntities, 77, 1) as $course){ //"s2ZK"
-        // foreach(array_slice($courseEntities, 80, 3) as $course){ //"s2JMPED"  "s3JMPED"  "s4JMPED"
+        // foreach(array_slice($courseEntities, 80, 3) as $course){ //"s2JMPED"  "s3JMPED"  "s4JMPD"
+            foreach(array_slice($courseEntities, 0, 85) as $course){
 
-            foreach(array_slice($courseEntities, 29, 1) as $course){
             $io->text('Fetching: '.$course->getName().' ('.++$counter.' of '.count($courseEntities).').');
 
             $courseEvents = $this->fetchSchedule($course->getId());
@@ -299,8 +299,11 @@ class FetchData extends Command
                 // echo 'group to find: '.$event->group ."\r\n";
                 $groupEntity = new Group();
 
-                // echo 'group to find: '.$event->group ."\r\n";
-                $course = $this->courseRepository->findOneByGroup($event->group);
+                echo 'group to find: '.$event->group ."\r\n";
+
+               preg_match('/(?<coursID>[a-z]\d[A-Za-z]([A-Za-z]|)([A-Za-z]|)([A-Za-z]|)([A-Za-z]|))/m',$event->group,$regex );
+
+                $course = $this->courseRepository->findByGroup($regex["coursID"]);
 
                 $groupEntity->setId($event->group);
                 $groupEntity->setCourse($course);
@@ -325,7 +328,7 @@ class FetchData extends Command
             // echo 'worker: '.$event->lecturer .' -> ' . $worker->getId()."\r\n";
             // echo 'room: '.$event->room .' -> ' . $room->getId()."\r\n";
         }
-
+        
         $this->flushDatabase();
          
         return Command::SUCCESS;

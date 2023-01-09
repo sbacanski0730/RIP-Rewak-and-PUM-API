@@ -44,6 +44,15 @@ class CourseRepository extends ServiceEntityRepository
             ->getOneOrNullResult()
         ;
     }
+    public function findByGroup($value): ?Course
+    {
+        return $this->createQueryBuilder('c')
+            ->andWhere(':val like c.id')
+            ->setParameter('val', $value)
+            ->getQuery()
+            ->getOneOrNullResult()
+        ;
+    }
 
 //    /**
 //     * @return Course[] Returns an array of Course objects
