@@ -128,7 +128,8 @@ class PoorApiController extends AbstractController
                     "timeStart" => $event->getStartTime(),
                     "timeEnd" => $event->getEndTime(),
                     "profesor" => $event->getWorker()->getName(),
-                    "subject" => $event->getSubject()
+                    "subject" => $event->getSubject(),
+                    "group" => $event->getGroup()->getId()
                 ];
                 }
                 break;
@@ -165,7 +166,7 @@ class PoorApiController extends AbstractController
                         $eventMap[] = (object) [
                             "timeStart" => $event->getStartTime(),
                             "timeEnd" => $event->getEndTime(),
-                            "room" => $event->getRoom()->getName(),
+                            "room" => $event->getRoom()->getLocationName(),
                             "profesor" => $event->getWorker()->getName(),
                             "subject" => $event->getSubject(),
                             "group" => $event->getGroup()->getId()
