@@ -28,7 +28,7 @@ Jan Kwiatkowski \\
 \maketitle
 
 \section{Opis funkcjonalny systemu}
-Celem "Projektu\textunderscore RIP - API" było utworzenie aplikacji do pobrania danych z planu uczelni Collegium Witelona. Wraz z tym dochodzi także część formatująca, przystosowująca pobrane dane w ten sposób aby aplikacja web oraz aplikacja mobilna byłby w stanie bez problemu się nimi obsługiwać.
+Celem "Projektu\textunderscore RIP - API" było utworzenie aplikacji do pobrania danych z planu uczelni Collegium Witelona. Wraz z tym dochodzi także część formatująca, przystosowująca pobrane dane w ten sposób aby aplikacja web oraz aplikacja mobilna byłyby w stanie bez problemu się nimi obsługiwać.
 \\Api będzie zgodnie z ustalonym harmonogramem, np. raz dziennie pobierało dane z planu uczelni. Wykonywało swoje funkcje, oraz wystawiało już sformatowane i posegregowane dane przy pomocy rest api.
 \\Endpointy wykonane są zgodnie z standardami swaggera. 
 
@@ -107,48 +107,19 @@ Jak postawić środowisko testowe na dockerze?\\
  \item Docker - zatrzymanie i usunięcie kontenerów \\\\
  \emph{docker-compose down} \\
   \end{enumerate}
-    
-
-\subsection{Postawienie systemu zdalnie}
-To Edit:
-W naszym wypadku użyliśmy programu PuTTY, aby podłączyć się z serwerem Debianowym. Może do tego posłużyć dowolny klient SSH.\\
-Po tym musieliśmy zainstalować następujące pakiety:
-\begin{itemize}
-\item nginx 1.18
-\item PHP 8.0.14
-\item mariadb 10.5.12
-\item phpMyAdmin 5.0.4
-\item Node.js 16.13.2
-\end{itemize}
-Pliki naszej strony są automatycznie pobierane z repozytorium git.
-\begin{enumerate}
-\item Pobieranie zależności Composer'a: \\\\
- \emph{composer install
-} \\
- \item Pobranie zależności npm:\\\\
- \emph{npm install
-} \\
- \item Budowanie Assetów: \\\\
- \emph{yarn build
-} \\
- \item Utworzenie schematu bazy danych: \\\\
- \emph{php bin/console doctrine:schema:update --force
-} \\
- \item Załadowanie zdefiniowanych wczesniej danych do bazy danych: \\\\
- \emph{php bin/console doctrine:fixtures:load
-} \\
-
-  \end{enumerate}
 
 
 \section{Dokumentacja}
-Link do pełnej dokumentacji na naszym repozytorium: 
+Link do dokumentacji na naszych repozytoriach: \\
 api: \url{https://github.com/sbacanski0730/RIP-Rewak-and-PUM-API/tree/main/documentation}\\\\
-web:
-mobile:
+web: \url{https://github.com/sbacanski0730/RIP-Rewak-and-PUM-Web/tree/main/documentation}\\\\
+mobile: \url{https://github.com/sbacanski0730/RIP-Rewak-and-PUM-Mobile/tree/main/documentation}\\\\
 
 \section{Wnioski projektowe}
 
-
+Pisanie pierwszego scrapera z api może być wyzwaniem. Tak było też w tym wypadku. Zwłaszcza, że z błędnych założeń chcieliśmy na początku napisać całość bez używania bazy danych. Spowodowało to wiele opóźnień i problemów. To oraz inne problemy związane z sprzętem komputerowym jednego członka zespołu opóźniły rozpoczęcie pisania tej części projektu.\\
+Patrząc na to z obecnej perspektywy zamiast próbować tworzyć nowe rozwiązania samemu zamiast skorzystać z gotowej dokumentacji nie było najlepszym wyborem. Podeszliśmy do tego myśląc, że pozwoli to na optymalizację projektu.\\
+Pomimo tego projekt wymagał abyśmy szukali wiedzy poza standardową dokumentacją. Gdyż nie wszystko to co było potrzebne w naszym wypadku było w niej dostępne. Więc poza pisaniem kodu oraz korzystaniem z dokumentacji musieliśmy dokonać własnego zapoznania się z tematem.\\
+Wiele w scraperze zależy od kodu na stronie, z której informacje są pobierane. Jak mogliśmy się przekonać z planem naszej uczelni, nie wszystkie strony posiadają klasy oraz kod zgodne z dobrymi praktykami. Więc wydobywanie informacji z planu wymagało trochę twórczego myślenia związanego z zapytaniami regex oraz odpowiednimi algorytmami.
 
 \end{document}
